@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://dwxdq15unsvsn"]
+[gd_scene load_steps=2 format=3 uid="uid://dwxdq15unsvsn"]
+
+[ext_resource type="Texture2D" uid="uid://b2yjrpcoskpqw" path="res://boss1_achievement.png" id="1_lllb2"]
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(160, 176)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.999985, -3.00003)
+scale = Vector2(0.12, 0.12)
+texture = ExtResource("1_lllb2")
