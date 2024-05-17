@@ -1,11 +1,76 @@
-[gd_scene load_steps=2 format=3 uid="uid://dwxdq15unsvsn"]
+[gd_scene load_steps=12 format=3 uid="uid://dwxdq15unsvsn"]
 
-[ext_resource type="Texture2D" uid="uid://b2yjrpcoskpqw" path="res://boss1_achievement.png" id="1_lllb2"]
+[ext_resource type="Script" path="res://player/player.gd" id="1_miod8"]
+[ext_resource type="Texture2D" uid="uid://qkotoijiitsj" path="res://player/knight_Front.png" id="2_1vixg"]
+[ext_resource type="Texture2D" uid="uid://codedu7ibs3kp" path="res://player/Main_Character_Walk_16x32_f4.png" id="2_xtxva"]
+[ext_resource type="Texture2D" uid="uid://ccjndpmerxgkb" path="res://player/knight_back.png" id="4_dlsm6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pjqx"]
+atlas = ExtResource("2_1vixg")
+region = Rect2(0, 0, 13, 21)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tfrkr"]
+atlas = ExtResource("2_xtxva")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qq7jf"]
+atlas = ExtResource("2_xtxva")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbhee"]
+atlas = ExtResource("2_xtxva")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olivj"]
+atlas = ExtResource("2_xtxva")
+region = Rect2(48, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5na8"]
+atlas = ExtResource("4_dlsm6")
+region = Rect2(0, 0, 13, 21)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gacg4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pjqx")
+}],
+"loop": true,
+"name": &"walk_down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tfrkr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qq7jf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wbhee")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olivj")
+}],
+"loop": true,
+"name": &"walk_right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5na8")
+}],
+"loop": true,
+"name": &"walk_up",
+"speed": 5.0
+}]
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(160, 176)
+script = ExtResource("1_miod8")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-0.999985, -3.00003)
-scale = Vector2(0.12, 0.12)
-texture = ExtResource("1_lllb2")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gacg4")
+animation = &"walk_up"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]

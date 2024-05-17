@@ -515,3 +515,8 @@ layer_2/tile_data = PackedInt32Array(458758, 458752, 0, 524294, 458752, 1, 58983
 
 [node name="Player" parent="." instance=ExtResource("1_dhger")]
 position = Vector2(161, 167)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+position = Vector2(-1, 7)
+process_callback = 0
+position_smoothing_enabled = true
