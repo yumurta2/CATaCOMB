@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dj8a5jcqr0rmw"
-path="res://.godot/imported/mob1_attack_16x32_f7.png-e5bb6490e2b3a997d176a96f79f0cca3.ctex"
+path="res://.godot/imported/mob1_attack_16x32_f7.png-fe43c80779d4266dfc4d786a474ed441.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tileset/red_mob/mob1_attack_16x32_f7.png"
-dest_files=["res://.godot/imported/mob1_attack_16x32_f7.png-e5bb6490e2b3a997d176a96f79f0cca3.ctex"]
+source_file="res://red_mob/mob1_attack_16x32_f7.png"
+dest_files=["res://.godot/imported/mob1_attack_16x32_f7.png-fe43c80779d4266dfc4d786a474ed441.ctex"]
 
 [params]
 

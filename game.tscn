@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cipme764kutej" path="res://tileset/dungeon/dungeon_tiles.png" id="6_hfups"]
 [ext_resource type="PackedScene" uid="uid://c6iu4lywivrgq" path="res://npcs/shaman/shaman.tscn" id="7_58olk"]
 [ext_resource type="PackedScene" uid="uid://1ke877ir43uu" path="res://collide/collide.tscn" id="8_6jtd4"]
-[ext_resource type="PackedScene" uid="uid://1vrd7xu1pjyx" path="res://tileset/red_mob/red_mob.tscn" id="9_yw4v6"]
+[ext_resource type="PackedScene" uid="uid://1vrd7xu1pjyx" path="res://red_mob/red_mob.tscn" id="9_yw4v6"]
 [ext_resource type="PackedScene" uid="uid://c2f61spj3gu4l" path="res://damage_zone/damage_zone.tscn" id="10_ulk42"]
 [ext_resource type="FontFile" uid="uid://bcruet1yxf71e" path="res://PixelOperator8.ttf" id="11_75vyb"]
 

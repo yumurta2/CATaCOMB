@@ -8,7 +8,7 @@ var directionY = 0
 func _ready():
 	pass # Replace with function body.
 
-
+ #asd
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass

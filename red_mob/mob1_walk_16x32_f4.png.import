@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmnsvfv7rfxcl"
-path="res://.godot/imported/mob1_walk_16x32_f4.png-c033521740170804c4f8a7e687cd333f.ctex"
+path="res://.godot/imported/mob1_walk_16x32_f4.png-e68fd80163dc997b346e0cf4b582a6c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://tileset/red_mob/mob1_walk_16x32_f4.png"
-dest_files=["res://.godot/imported/mob1_walk_16x32_f4.png-c033521740170804c4f8a7e687cd333f.ctex"]
+source_file="res://red_mob/mob1_walk_16x32_f4.png"
+dest_files=["res://.godot/imported/mob1_walk_16x32_f4.png-e68fd80163dc997b346e0cf4b582a6c8.ctex"]
 
 [params]
 
