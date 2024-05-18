@@ -431,8 +431,7 @@ libraries = {
 "": SubResource("AnimationLibrary_rwd2r")
 }
 
-[node name="DamageZone" parent="AnimationPlayer" instance=ExtResource("15_5ceu6")]
-position = Vector2(160, 176)
+[node name="DamageZone" parent="." instance=ExtResource("15_5ceu6")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimationPlayer/DamageZone"]
 position = Vector2(20, 6)
