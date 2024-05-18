@@ -550,7 +550,7 @@ process_callback = 0
 position_smoothing_enabled = true
 
 [node name="Shaman" parent="." instance=ExtResource("7_58olk")]
-position = Vector2(102, -43)
+position = Vector2(114, -45)
 
 [node name="Colliders" type="Node" parent="."]
 
