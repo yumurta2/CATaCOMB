@@ -528,19 +528,137 @@ position_smoothing_enabled = true
 position = Vector2(135, 107)
 
 [node name="Collide" parent="." instance=ExtResource("8_6jtd4")]
-position = Vector2(111, 151)
+position = Vector2(115, 128)
+scale = Vector2(2.9782, 0.769822)
 
-[node name="Collide5" parent="." instance=ExtResource("8_6jtd4")]
-position = Vector2(60, 167)
+[node name="Collide23" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(33, 113)
+scale = Vector2(2.9782, 0.769822)
 
-[node name="Collide6" parent="." instance=ExtResource("8_6jtd4")]
-position = Vector2(69, 127)
+[node name="Collide24" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(73, 99)
+scale = Vector2(1.9782, 0.769822)
+
+[node name="Collide25" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(85, 113)
+scale = Vector2(0.898205, 0.769822)
+
+[node name="Collide17" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(-32, -29)
+scale = Vector2(2.9782, 0.769822)
+
+[node name="Collide27" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(-70, 67)
+scale = Vector2(7.1782, 0.769822)
+
+[node name="Collide28" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(-78, 12)
+scale = Vector2(7.1782, 0.769822)
+
+[node name="Collide29" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(-11, -8)
+scale = Vector2(0.818204, 1.32982)
+
+[node name="Collide30" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(26, -34)
+scale = Vector2(2.9782, 0.689821)
+
+[node name="Collide31" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(54, -52)
+scale = Vector2(0.658203, 2.12982)
+
+[node name="Collide32" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(107, -68)
+scale = Vector2(-4.6924, 1.24176)
+
+[node name="Collide33" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(156, -53)
+scale = Vector2(0.667607, 1.04176)
+
+[node name="Collide34" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(210, -206)
+scale = Vector2(8.22761, 1.32176)
+
+[node name="Collide18" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(-6, -192)
+scale = Vector2(4.6582, 0.769822)
+
+[node name="Collide20" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(63, -226)
+scale = Vector2(2.73821, 0.769822)
 
 [node name="Collide2" parent="." instance=ExtResource("8_6jtd4")]
-position = Vector2(106, 202)
+position = Vector2(209, 128)
+scale = Vector2(2.9782, 0.769822)
 
 [node name="Collide3" parent="." instance=ExtResource("8_6jtd4")]
-position = Vector2(100, 239)
+position = Vector2(273, 113)
+scale = Vector2(4.1382, 0.769822)
+
+[node name="Collide6" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(380, 49)
+scale = Vector2(6.09819, 0.769822)
+
+[node name="Collide7" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(374, -1)
+scale = Vector2(6.09819, 0.769822)
+
+[node name="Collide15" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(85, -126)
+scale = Vector2(8.41962, 0.769822)
+
+[node name="Collide8" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(312, -19)
+scale = Vector2(-1.30032, -1.04345)
+
+[node name="Collide19" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(32, -205)
+scale = Vector2(-1.30032, -1.68345)
+
+[node name="Collide9" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(289, -32)
+scale = Vector2(-0.998708, -0.748035)
+
+[node name="Collide10" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(274, -35)
+scale = Vector2(-0.998708, -0.748035)
+
+[node name="Collide22" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(130, -227)
+scale = Vector2(-0.998708, -0.748035)
+
+[node name="Collide21" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(107, -238)
+scale = Vector2(-1.68165, -0.666417)
+
+[node name="Collide11" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(255, -63)
+scale = Vector2(-0.998708, -2.22804)
+
+[node name="Collide12" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(282, -76)
+scale = Vector2(1.77429, -1.044)
 
 [node name="Collide4" parent="." instance=ExtResource("8_6jtd4")]
-position = Vector2(104, 111)
+position = Vector2(299, -141)
+scale = Vector2(0.634002, 6.27123)
+
+[node name="Collide13" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(-56, -109)
+scale = Vector2(0.634002, 7.91123)
+
+[node name="Collide26" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(7, 91)
+scale = Vector2(0.634002, 2.99124)
+
+[node name="Collide14" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(-4, -79)
+scale = Vector2(0.634002, 4.99124)
+
+[node name="Collide16" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(168, -86)
+scale = Vector2(0.634002, 4.43124)
+
+[node name="Collide5" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(313, 72)
+scale = Vector2(0.658194, 3.31915)
