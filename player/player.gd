@@ -1,7 +1,12 @@
 extends CharacterBody2D
 #selam
+#AS
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var label = $Label
+
+@onready var animation_player = $AnimationPlayer
+
+@onready var hit_zone = $DamageZone/hit_zone
 
 @export var WALK_SPEED = 100.0
 @export var ROLL_SPEED = 300.0
@@ -74,20 +79,24 @@ func dodge():
 		velocity.y = 1 * ROLL_SPEED
 func light_attack():
 	if last_direction == "left":
-		animated_sprite.play("light_attack")
+		animation_player.play("left_light_attack")
+		animated_sprite.play("right_light_attack")
 		animated_sprite.flip_h = true
 		velocity.x = 0
 		velocity.y = 0
 	elif last_direction == "right":
-		animated_sprite.play("light_attack")
+		animation_player.play("right_light_attack")
+		animated_sprite.play("right_light_attack")
 		animated_sprite.flip_h = false
 		velocity.x = 0
 		velocity.y = 0
 	elif last_direction == "up":
-		pass
+		animation_player.play("up_light_attack")
+		animated_sprite.flip_h = false
 	elif last_direction == "down":
-		pass
-func change_animation( anim):
+		animation_player.play("down_light_attack")
+		animated_sprite.flip_h = false
+func change_animation(anim):
 	if last_direction == "left":
 		animated_sprite.flip_h = true
 		animated_sprite.play(anim + "_right")

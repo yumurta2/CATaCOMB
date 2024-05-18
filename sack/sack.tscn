@@ -1,3 +1,46 @@
-[gd_scene format=3 uid="uid://cupf3m6hfmx0b"]
+[gd_scene load_steps=8 format=3 uid="uid://cupf3m6hfmx0b"]
 
-[node name="Sack" type="Node2D"]
+[ext_resource type="Script" path="res://sack/sack.gd" id="1_otp4q"]
+[ext_resource type="Texture2D" uid="uid://dj30kxnunkuvq" path="res://sack/Sack_Small.png" id="2_1pcao"]
+[ext_resource type="Texture2D" uid="uid://di8iwnmpaphgx" path="res://collectible/yarn/Tangled_Yarn.png" id="3_og18t"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0g71e"]
+atlas = ExtResource("2_1pcao")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yqhe"]
+atlas = ExtResource("3_og18t")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0voxr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0g71e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yqhe")
+}],
+"loop": true,
+"name": &"opened",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ahoty"]
+
+[node name="Sack" type="AnimatableBody2D"]
+script = ExtResource("1_otp4q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0voxr")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 99
+visibility_layer = 99
+shape = SubResource("RectangleShape2D_ahoty")

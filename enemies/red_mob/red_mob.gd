@@ -30,7 +30,7 @@ func _physics_process(delta):
 	if time_accumulator >= update_interval:
 		time_accumulator -= update_interval
 		perform_update(delta)
-		
+
 func perform_update(delta):
 	directionX = randi_range(-1,1)
 	directionY = randi_range(-1,1)
