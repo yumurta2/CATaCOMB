@@ -744,7 +744,7 @@ position = Vector2(417, 183)
 scale = Vector2(1.36486, 8.48249)
 
 [node name="Collide64" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(449, 71)
+position = Vector2(449, 72)
 scale = Vector2(1.24487, 2.80249)
 
 [node name="Collide65" parent="Colliders" instance=ExtResource("8_6jtd4")]
@@ -903,7 +903,7 @@ scale = Vector2(1.68165, 0.666417)
 [node name="Collide11" parent="Colliders" instance=ExtResource("8_6jtd4")]
 position = Vector2(259, -67)
 rotation = -3.14159
-scale = Vector2(0.998708, 1.94804)
+scale = Vector2(1.00021, 2.05137)
 
 [node name="Collide12" parent="Colliders" instance=ExtResource("8_6jtd4")]
 position = Vector2(282, -76)
