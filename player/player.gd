@@ -10,6 +10,8 @@ var dodging = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var directionX 
 var directionY
+var maxHealth = 100
+var currentHealth = 100
 func _physics_process(delta):
 
 	if not dodging:
@@ -68,3 +70,10 @@ func change_animation(last_direction):
 	elif last_direction == "down":
 		animated_sprite.flip_h = false
 		animated_sprite.play("walk_down")
+func damage(num):
+	currentHealth -= clamp(num , 0 ,maxHealth) 
+	die()
+func die():
+	if currentHealth <= 0:
+		set_physics_process(false)
+
