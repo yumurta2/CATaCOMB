@@ -11,8 +11,7 @@ var currentHealth = 50
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
- #asd
+#asd
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
@@ -35,16 +34,13 @@ func _physics_process(delta):
 func perform_update(delta):
 	directionX = randi_range(-1,1)
 	directionY = randi_range(-1,1)
-
 func damage(num):
 	currentHealth -= clamp(num , 0 ,maxHealth)
-	set_physics_process(false)
-	animated_sprite.play("damage")
+	animated_sprite.modulate = Color(1, 0, 0) # Beyaza dön
 	await get_tree().create_timer(0.2).timeout
-	set_physics_process(true)
+	animated_sprite.modulate = Color(1, 1, 1) # Eski haline dön
 	if currentHealth <= 0:
 		die()
 func die():
 	set_physics_process(false)
-	animated_sprite.play("death")
-	await get_tree().create_timer(0.6).timeout
+	queue_free()
