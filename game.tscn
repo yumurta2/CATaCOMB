@@ -540,7 +540,7 @@ layer_4/tile_data = PackedInt32Array(589830, 458752, 0, 655366, 458752, 1, 72090
 [node name="Player" parent="." instance=ExtResource("1_dhger")]
 unique_name_in_owner = true
 z_index = 5
-position = Vector2(166, 352)
+position = Vector2(161, 280)
 collision_layer = 3
 collision_mask = 3
 

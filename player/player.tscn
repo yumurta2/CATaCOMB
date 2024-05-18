@@ -1,11 +1,11 @@
 [gd_scene load_steps=62 format=3 uid="uid://dwxdq15unsvsn"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_miod8"]
-[ext_resource type="Texture2D" uid="uid://cproc4y0xqvcg" path="res://player/Main_Character_Death_32x32_f4.png" id="2_g07ih"]
+[ext_resource type="Texture2D" uid="uid://0dumcnw87pwh" path="res://player/Main_Character_Death_32x32_f4.png" id="2_g07ih"]
 [ext_resource type="Texture2D" uid="uid://c8v67qsylmafb" path="res://player/Main_Character_Walk_Front_32x32_f4-sheet.png" id="2_lypoc"]
 [ext_resource type="Texture2D" uid="uid://tp3vw40grxj7" path="res://player/Main_Character_Hit_32x32_f4-sheet.png" id="2_r36pt"]
 [ext_resource type="Texture2D" uid="uid://ris64f7xfljh" path="res://player/Main_Character_Roll_32x32_f8.png" id="2_top28"]
-[ext_resource type="Texture2D" uid="uid://codedu7ibs3kp" path="res://player/Main_Character_Walk_16x32_f4.png" id="2_xtxva"]
+[ext_resource type="Texture2D" uid="uid://cykv6cwg8pwdg" path="res://player/Main_Character_Walk_16x32_f4.png" id="2_xtxva"]
 [ext_resource type="Texture2D" uid="uid://dfpsnqhbpgoin" path="res://player/Main_Character_Walk_Back_32x32_f4-sheet.png" id="4_754bc"]
 [ext_resource type="Texture2D" uid="uid://dbpqjq8rxxhov" path="res://player/Main_Character_Idle_Front_32x32_f4-sheet-sheet.png" id="4_dphbn"]
 [ext_resource type="Texture2D" uid="uid://dwyah2o0t5we7" path="res://player/Main_Character_Attack_96x96_f15.png" id="4_o8040"]
@@ -91,10 +91,6 @@ region = Rect2(192, 0, 96, 96)
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqxnx"]
 atlas = ExtResource("4_o8040")
 region = Rect2(288, 0, 96, 96)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_16mgt"]
-atlas = ExtResource("4_o8040")
-region = Rect2(384, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1b25g"]
 atlas = ExtResource("5_ifbis")
@@ -264,9 +260,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dqxnx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_16mgt")
 }],
 "loop": false,
 "name": &"light_attack",
@@ -369,15 +362,43 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q8shr"]
 size = Vector2(9, 15)
 
-[sub_resource type="Animation" id="Animation_v3dai"]
-resource_name = "attack"
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_a4wm4"]
-_data = {
-"attack": SubResource("Animation_v3dai")
+[sub_resource type="Animation" id="Animation_ihptw"]
+resource_name = "right_attack_0"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/DamageZone/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnr5h"]
+[sub_resource type="Animation" id="Animation_8gnsi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/DamageZone/CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rwd2r"]
+_data = {
+"RESET": SubResource("Animation_8gnsi"),
+"right_attack_0": SubResource("Animation_ihptw")
+}
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4x204"]
 
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(160, 176)
@@ -386,8 +407,10 @@ script = ExtResource("1_miod8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_gacg4")
-animation = &"idle_right"
+animation = &"light_attack"
 autoplay = "walk_right"
+frame = 3
+frame_progress = 1.0
 
 [node name="Label" type="Label" parent="."]
 offset_left = -20.0
@@ -400,17 +423,19 @@ theme_override_font_sizes/font_size = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 99
 visibility_layer = 99
-position = Vector2(0, 7)
+position = Vector2(-0.5, 7.5)
 shape = SubResource("RectangleShape2D_q8shr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
-"": SubResource("AnimationLibrary_a4wm4")
+"": SubResource("AnimationLibrary_rwd2r")
 }
 
 [node name="DamageZone" parent="AnimationPlayer" instance=ExtResource("15_5ceu6")]
 position = Vector2(160, 176)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimationPlayer/DamageZone"]
-position = Vector2(18, 6)
-shape = SubResource("RectangleShape2D_rnr5h")
+position = Vector2(20, 6)
+scale = Vector2(1.52575, 0.835948)
+shape = SubResource("CapsuleShape2D_4x204")
+disabled = true
