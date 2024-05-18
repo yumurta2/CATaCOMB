@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://qrdhp27rwp2f"]
+[gd_scene load_steps=21 format=3 uid="uid://qrdhp27rwp2f"]
 
 [ext_resource type="Script" path="res://GameManager.gd" id="1_3jc27"]
 [ext_resource type="PackedScene" uid="uid://dwxdq15unsvsn" path="res://player/player.tscn" id="1_dhger"]
@@ -10,9 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://c6iu4lywivrgq" path="res://npcs/shaman/shaman.tscn" id="7_58olk"]
 [ext_resource type="PackedScene" uid="uid://1ke877ir43uu" path="res://collide/collide.tscn" id="8_6jtd4"]
 [ext_resource type="PackedScene" uid="uid://1vrd7xu1pjyx" path="res://enemies/red_mob/red_mob.tscn" id="9_yw4v6"]
-[ext_resource type="PackedScene" uid="uid://c2f61spj3gu4l" path="res://damage_zone/damage_zone.tscn" id="10_ulk42"]
 [ext_resource type="FontFile" uid="uid://bcruet1yxf71e" path="res://PixelOperator8.ttf" id="11_75vyb"]
 [ext_resource type="PackedScene" uid="uid://cupf3m6hfmx0b" path="res://sack/sack.tscn" id="12_boxpd"]
+[ext_resource type="PackedScene" uid="uid://bawrvanbmwsie" path="res://damage_zone_only_player/damage_zone_only_player.tscn" id="13_2jri5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mvpq5"]
 texture = ExtResource("2_vm7w2")
@@ -507,20 +507,8 @@ sources/2 = SubResource("TileSetAtlasSource_2jfuh")
 sources/3 = SubResource("TileSetAtlasSource_jygq3")
 sources/4 = SubResource("TileSetAtlasSource_ck1cp")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1d4r"]
-size = Vector2(22, 26)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_40y85"]
-size = Vector2(22, 26)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yjk36"]
-size = Vector2(22, 26)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_72acw"]
-size = Vector2(21, 24)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_578lr"]
-size = Vector2(21, 24)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fadep"]
+size = Vector2(24.5, 29)
 
 [node name="Game" type="Node2D"]
 
@@ -581,7 +569,7 @@ position = Vector2(-77, 67)
 scale = Vector2(7.8982, 0.769822)
 
 [node name="Collide93" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(-167, 131)
+position = Vector2(-171, 134)
 scale = Vector2(7.1782, 0.769822)
 
 [node name="Collide94" parent="Colliders" instance=ExtResource("8_6jtd4")]
@@ -621,11 +609,11 @@ position = Vector2(-162, 83)
 scale = Vector2(0.622882, 1.76982)
 
 [node name="Collide99" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(-130, 95)
+position = Vector2(-129, 92)
 scale = Vector2(3.18289, 0.609824)
 
 [node name="Collide100" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(-96, 114)
+position = Vector2(-91, 115)
 scale = Vector2(1.10288, 1.32983)
 
 [node name="Collide28" parent="Colliders" instance=ExtResource("8_6jtd4")]
@@ -867,21 +855,6 @@ position = Vector2(234, -482)
 rotation = -3.14159
 scale = Vector2(0.798708, 0.748035)
 
-[node name="Collide79" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(-118, 112)
-rotation = -3.14159
-scale = Vector2(0.798708, 0.748035)
-
-[node name="Collide80" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(-262, 33)
-rotation = -3.14159
-scale = Vector2(0.798708, 0.748035)
-
-[node name="Collide81" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(-262, -30)
-rotation = -3.14159
-scale = Vector2(0.798708, 0.748035)
-
 [node name="Collide82" parent="Colliders" instance=ExtResource("8_6jtd4")]
 position = Vector2(714, 65)
 rotation = -3.14159
@@ -1007,7 +980,7 @@ vertical_alignment = 1
 [node name="Sacks" type="Node" parent="."]
 
 [node name="Sack" parent="Sacks" instance=ExtResource("12_boxpd")]
-position = Vector2(87, 362)
+position = Vector2(-121, 111)
 
 [node name="Sack2" parent="Sacks" instance=ExtResource("12_boxpd")]
 position = Vector2(245, 359)
@@ -1023,59 +996,106 @@ position = Vector2(525, 76)
 
 [node name="RedMobs" type="Node" parent="."]
 
-[node name="RedMob" parent="RedMobs" instance=ExtResource("9_yw4v6")]
-position = Vector2(555, 120)
+[node name="RedMob6" parent="RedMobs" instance=ExtResource("9_yw4v6")]
+position = Vector2(-198, 46)
 
-[node name="DamageZone" parent="RedMobs/RedMob" instance=ExtResource("10_ulk42")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RedMobs/RedMob/DamageZone"]
+[node name="DamageZoneOnlyPlayer" parent="RedMobs/RedMob6" instance=ExtResource("13_2jri5")]
 light_mask = 99
 visibility_layer = 99
-shape = SubResource("RectangleShape2D_o1d4r")
 
-[node name="RedMob2" parent="RedMobs" instance=ExtResource("9_yw4v6")]
-position = Vector2(603, -5)
-
-[node name="DamageZone" parent="RedMobs/RedMob2" instance=ExtResource("10_ulk42")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RedMobs/RedMob2/DamageZone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedMobs/RedMob6/DamageZoneOnlyPlayer"]
 light_mask = 99
 visibility_layer = 99
 position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_40y85")
+shape = SubResource("RectangleShape2D_fadep")
 
-[node name="RedMob3" parent="RedMobs" instance=ExtResource("9_yw4v6")]
-position = Vector2(601, 63)
+[node name="RedMob7" parent="RedMobs" instance=ExtResource("9_yw4v6")]
+position = Vector2(-166, 29)
 
-[node name="DamageZone" parent="RedMobs/RedMob3" instance=ExtResource("10_ulk42")]
-light_mask = 3
-visibility_layer = 3
+[node name="DamageZoneOnlyPlayer" parent="RedMobs/RedMob7" instance=ExtResource("13_2jri5")]
+light_mask = 99
+visibility_layer = 99
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RedMobs/RedMob3/DamageZone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedMobs/RedMob7/DamageZoneOnlyPlayer"]
 light_mask = 99
 visibility_layer = 99
 position = Vector2(0, -1)
-shape = SubResource("RectangleShape2D_yjk36")
+shape = SubResource("RectangleShape2D_fadep")
 
-[node name="RedMob4" parent="RedMobs" instance=ExtResource("9_yw4v6")]
-position = Vector2(-218, 18)
+[node name="RedMob8" parent="RedMobs" instance=ExtResource("9_yw4v6")]
+position = Vector2(-204, 11)
 
-[node name="DamageZone" parent="RedMobs/RedMob4" instance=ExtResource("10_ulk42")]
+[node name="DamageZoneOnlyPlayer" parent="RedMobs/RedMob8" instance=ExtResource("13_2jri5")]
+light_mask = 99
+visibility_layer = 99
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RedMobs/RedMob4/DamageZone"]
-position = Vector2(0.5, -1)
-shape = SubResource("RectangleShape2D_72acw")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedMobs/RedMob8/DamageZoneOnlyPlayer"]
+light_mask = 99
+visibility_layer = 99
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_fadep")
 
-[node name="RedMob5" parent="RedMobs" instance=ExtResource("9_yw4v6")]
-position = Vector2(-185, 37)
+[node name="RedMob9" parent="RedMobs" instance=ExtResource("9_yw4v6")]
+position = Vector2(-234, 34)
 
-[node name="DamageZone" parent="RedMobs/RedMob5" instance=ExtResource("10_ulk42")]
+[node name="DamageZoneOnlyPlayer" parent="RedMobs/RedMob9" instance=ExtResource("13_2jri5")]
+light_mask = 99
+visibility_layer = 99
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RedMobs/RedMob5/DamageZone"]
-position = Vector2(0.5, -1)
-shape = SubResource("RectangleShape2D_578lr")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedMobs/RedMob9/DamageZoneOnlyPlayer"]
+light_mask = 99
+visibility_layer = 99
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_fadep")
+
+[node name="RedMob10" parent="RedMobs" instance=ExtResource("9_yw4v6")]
+position = Vector2(-202, 83)
+
+[node name="DamageZoneOnlyPlayer" parent="RedMobs/RedMob10" instance=ExtResource("13_2jri5")]
+light_mask = 99
+visibility_layer = 99
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedMobs/RedMob10/DamageZoneOnlyPlayer"]
+light_mask = 99
+visibility_layer = 99
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_fadep")
+
+[node name="RedMob11" parent="RedMobs" instance=ExtResource("9_yw4v6")]
+position = Vector2(-137, 38)
+
+[node name="DamageZoneOnlyPlayer" parent="RedMobs/RedMob11" instance=ExtResource("13_2jri5")]
+light_mask = 99
+visibility_layer = 99
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedMobs/RedMob11/DamageZoneOnlyPlayer"]
+light_mask = 99
+visibility_layer = 99
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_fadep")
+
+[node name="RedMob12" parent="RedMobs" instance=ExtResource("9_yw4v6")]
+position = Vector2(-210, -34)
+
+[node name="DamageZoneOnlyPlayer" parent="RedMobs/RedMob12" instance=ExtResource("13_2jri5")]
+light_mask = 99
+visibility_layer = 99
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedMobs/RedMob12/DamageZoneOnlyPlayer"]
+light_mask = 99
+visibility_layer = 99
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_fadep")
 
 [node name="Npcs" type="Node" parent="."]
 
 [node name="Shaman" parent="Npcs" instance=ExtResource("7_58olk")]
 position = Vector2(114, -45)
+
+[connection signal="body_entered" from="RedMobs/RedMob6/DamageZoneOnlyPlayer" to="RedMobs/RedMob6/DamageZoneOnlyPlayer" method="_on_body_entered"]
+[connection signal="body_entered" from="RedMobs/RedMob7/DamageZoneOnlyPlayer" to="RedMobs/RedMob7/DamageZoneOnlyPlayer" method="_on_body_entered"]
+[connection signal="body_entered" from="RedMobs/RedMob8/DamageZoneOnlyPlayer" to="RedMobs/RedMob8/DamageZoneOnlyPlayer" method="_on_body_entered"]
+[connection signal="body_entered" from="RedMobs/RedMob9/DamageZoneOnlyPlayer" to="RedMobs/RedMob9/DamageZoneOnlyPlayer" method="_on_body_entered"]
+[connection signal="body_entered" from="RedMobs/RedMob10/DamageZoneOnlyPlayer" to="RedMobs/RedMob10/DamageZoneOnlyPlayer" method="_on_body_entered"]
+[connection signal="body_entered" from="RedMobs/RedMob11/DamageZoneOnlyPlayer" to="RedMobs/RedMob11/DamageZoneOnlyPlayer" method="_on_body_entered"]
+[connection signal="body_entered" from="RedMobs/RedMob12/DamageZoneOnlyPlayer" to="RedMobs/RedMob12/DamageZoneOnlyPlayer" method="_on_body_entered"]
