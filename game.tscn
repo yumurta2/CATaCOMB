@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://qrdhp27rwp2f"]
+[gd_scene load_steps=15 format=3 uid="uid://qrdhp27rwp2f"]
 
 [ext_resource type="PackedScene" uid="uid://dwxdq15unsvsn" path="res://player/player.tscn" id="1_dhger"]
 [ext_resource type="Texture2D" uid="uid://dhb1bewbok7vo" path="res://tileset/outside/outside1.png" id="2_vm7w2"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://da0s408e438fr" path="res://tileset/dungeon/floor_tiles16x16.png" id="5_qxwno"]
 [ext_resource type="Texture2D" uid="uid://cipme764kutej" path="res://tileset/dungeon/dungeon_tiles.png" id="6_hfups"]
 [ext_resource type="PackedScene" uid="uid://c6iu4lywivrgq" path="res://npcs/shaman/shaman.tscn" id="7_58olk"]
+[ext_resource type="PackedScene" uid="uid://1ke877ir43uu" path="res://collide/collide.tscn" id="8_6jtd4"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mvpq5"]
 texture = ExtResource("2_vm7w2")
@@ -516,6 +517,7 @@ layer_2/tile_data = PackedInt32Array(458758, 458752, 0, 524294, 458752, 1, 58983
 
 [node name="Player" parent="." instance=ExtResource("1_dhger")]
 position = Vector2(173, 161)
+collision_layer = 2
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-1, 7)
@@ -524,3 +526,21 @@ position_smoothing_enabled = true
 
 [node name="Shaman" parent="." instance=ExtResource("7_58olk")]
 position = Vector2(135, 107)
+
+[node name="Collide" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(111, 151)
+
+[node name="Collide5" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(60, 167)
+
+[node name="Collide6" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(69, 127)
+
+[node name="Collide2" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(106, 202)
+
+[node name="Collide3" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(100, 239)
+
+[node name="Collide4" parent="." instance=ExtResource("8_6jtd4")]
+position = Vector2(104, 111)
