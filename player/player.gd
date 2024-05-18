@@ -74,11 +74,16 @@ func change_animation(last_direction):
 		animated_sprite.flip_h = false
 		animated_sprite.play("walk_down")
 func damage(num):
-	currentHealth -= clamp(num , 0 ,maxHealth) 
+	currentHealth -= clamp(num , 0 ,maxHealth)
+	dodging = true
+	animated_sprite.play("damage")
+	await get_tree().create_timer(0.2).timeout
+	dodging = false
 	if currentHealth <= 0:
 		die()
 func die(): 
 	set_physics_process(false)
-	await get_tree().create_timer(0.5).timeout
+	animated_sprite.play("death")
+	await get_tree().create_timer(0.6).timeout
 	get_tree().reload_current_scene()
 
