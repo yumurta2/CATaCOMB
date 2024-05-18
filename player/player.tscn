@@ -1,11 +1,11 @@
-[gd_scene load_steps=34 format=3 uid="uid://dwxdq15unsvsn"]
+[gd_scene load_steps=35 format=3 uid="uid://dwxdq15unsvsn"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_miod8"]
-[ext_resource type="Texture2D" uid="uid://0dumcnw87pwh" path="res://player/Main_Character_Death_32x32_f4.png" id="2_g07ih"]
+[ext_resource type="Texture2D" uid="uid://cproc4y0xqvcg" path="res://player/Main_Character_Death_32x32_f4.png" id="2_g07ih"]
 [ext_resource type="Texture2D" uid="uid://c8v67qsylmafb" path="res://player/Main_Character_Walk_Front_32x32_f4-sheet.png" id="2_lypoc"]
 [ext_resource type="Texture2D" uid="uid://tp3vw40grxj7" path="res://player/Main_Character_Hit_32x32_f4-sheet.png" id="2_r36pt"]
 [ext_resource type="Texture2D" uid="uid://ris64f7xfljh" path="res://player/Main_Character_Roll_32x32_f8.png" id="2_top28"]
-[ext_resource type="Texture2D" uid="uid://cykv6cwg8pwdg" path="res://player/Main_Character_Walk_16x32_f4.png" id="2_xtxva"]
+[ext_resource type="Texture2D" uid="uid://codedu7ibs3kp" path="res://player/Main_Character_Walk_16x32_f4.png" id="2_xtxva"]
 [ext_resource type="Texture2D" uid="uid://dfpsnqhbpgoin" path="res://player/Main_Character_Walk_Back_32x32_f4-sheet.png" id="4_754bc"]
 [ext_resource type="Texture2D" uid="uid://dwyah2o0t5we7" path="res://player/Main_Character_Attack_96x96_f15.png" id="4_o8040"]
 [ext_resource type="FontFile" uid="uid://bcruet1yxf71e" path="res://PixelOperator8.ttf" id="6_qf78n"]
@@ -37,6 +37,10 @@ region = Rect2(192, 0, 96, 96)
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqxnx"]
 atlas = ExtResource("4_o8040")
 region = Rect2(288, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_16mgt"]
+atlas = ExtResource("4_o8040")
+region = Rect2(384, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0rheo"]
 atlas = ExtResource("2_top28")
@@ -131,6 +135,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_dqxnx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_16mgt")
 }],
 "loop": false,
 "name": &"light_attack",
@@ -214,7 +221,6 @@ position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_gacg4")
 animation = &"light_attack"
 autoplay = "walk_right"
-frame = 3
 frame_progress = 1.0
 
 [node name="Label" type="Label" parent="."]
