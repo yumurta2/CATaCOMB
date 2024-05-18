@@ -739,9 +739,7 @@ position = Vector2(485, 265)
 scale = Vector2(6.86927, 1.4039)
 
 [node name="Collide63" parent="Colliders" instance=ExtResource("8_6jtd4")]
-
 position = Vector2(417, 183)
-
 scale = Vector2(1.36486, 8.48249)
 
 [node name="Collide64" parent="Colliders" instance=ExtResource("8_6jtd4")]
@@ -955,10 +953,7 @@ position = Vector2(168, -86)
 scale = Vector2(0.634002, 4.43124)
 
 [node name="Collide5" parent="Colliders" instance=ExtResource("8_6jtd4")]
-
-
 position = Vector2(317, 76)
-
 scale = Vector2(0.658194, 3.31915)
 
 [node name="Collide85" parent="Colliders" instance=ExtResource("8_6jtd4")]

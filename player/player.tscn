@@ -1,11 +1,11 @@
-[gd_scene load_steps=38 format=3 uid="uid://dwxdq15unsvsn"]
+[gd_scene load_steps=34 format=3 uid="uid://dwxdq15unsvsn"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_miod8"]
-[ext_resource type="Texture2D" uid="uid://cproc4y0xqvcg" path="res://player/Main_Character_Death_32x32_f4.png" id="2_g07ih"]
+[ext_resource type="Texture2D" uid="uid://0dumcnw87pwh" path="res://player/Main_Character_Death_32x32_f4.png" id="2_g07ih"]
 [ext_resource type="Texture2D" uid="uid://c8v67qsylmafb" path="res://player/Main_Character_Walk_Front_32x32_f4-sheet.png" id="2_lypoc"]
 [ext_resource type="Texture2D" uid="uid://tp3vw40grxj7" path="res://player/Main_Character_Hit_32x32_f4-sheet.png" id="2_r36pt"]
 [ext_resource type="Texture2D" uid="uid://ris64f7xfljh" path="res://player/Main_Character_Roll_32x32_f8.png" id="2_top28"]
-[ext_resource type="Texture2D" uid="uid://codedu7ibs3kp" path="res://player/Main_Character_Walk_16x32_f4.png" id="2_xtxva"]
+[ext_resource type="Texture2D" uid="uid://cykv6cwg8pwdg" path="res://player/Main_Character_Walk_16x32_f4.png" id="2_xtxva"]
 [ext_resource type="Texture2D" uid="uid://dfpsnqhbpgoin" path="res://player/Main_Character_Walk_Back_32x32_f4-sheet.png" id="4_754bc"]
 [ext_resource type="Texture2D" uid="uid://mn7kcjbiavr6" path="res://player/Main_Character_AttackPLACEHOLDER_76x71_f4-sheet.png" id="4_fsp77"]
 [ext_resource type="FontFile" uid="uid://bcruet1yxf71e" path="res://PixelOperator8.ttf" id="6_qf78n"]
@@ -37,22 +37,6 @@ region = Rect2(152, 0, 76, 71)
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ucdx"]
 atlas = ExtResource("4_fsp77")
 region = Rect2(228, 0, 76, 71)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ln2mk"]
-atlas = ExtResource("4_fsp77")
-region = Rect2(304, 0, 76, 71)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hrx7a"]
-atlas = ExtResource("4_fsp77")
-region = Rect2(380, 0, 76, 71)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ceivq"]
-atlas = ExtResource("4_fsp77")
-region = Rect2(456, 0, 76, 71)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hf1hy"]
-atlas = ExtResource("4_fsp77")
-region = Rect2(532, 0, 76, 71)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0rheo"]
 atlas = ExtResource("2_top28")
@@ -147,20 +131,8 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5ucdx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ln2mk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hrx7a")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ceivq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hf1hy")
 }],
-"loop": true,
+"loop": false,
 "name": &"light_attack",
 "speed": 10.0
 }, {
@@ -242,6 +214,8 @@ position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_gacg4")
 animation = &"light_attack"
 autoplay = "walk_right"
+frame = 3
+frame_progress = 1.0
 
 [node name="Label" type="Label" parent="."]
 offset_left = -20.0
