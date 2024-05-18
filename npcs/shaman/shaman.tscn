@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6iu4lywivrgq"]
+
+[ext_resource type="Texture2D" uid="uid://bm2kbe0imlilp" path="res://npcs/shaman/npc.png" id="1_0ud8e"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h6ihp"]
+atlas = ExtResource("1_0ud8e")
+region = Rect2(0, 0, 16, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gt2ga"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h6ihp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Shaman" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gt2ga")
+autoplay = "default"

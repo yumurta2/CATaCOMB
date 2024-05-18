@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://qrdhp27rwp2f"]
+[gd_scene load_steps=14 format=3 uid="uid://qrdhp27rwp2f"]
 
 [ext_resource type="PackedScene" uid="uid://dwxdq15unsvsn" path="res://player/player.tscn" id="1_dhger"]
 [ext_resource type="Texture2D" uid="uid://dhb1bewbok7vo" path="res://tileset/outside/outside1.png" id="2_vm7w2"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://brcc2uhuibrf8" path="res://tileset/dungeon/walls16x16.png" id="4_ngu1p"]
 [ext_resource type="Texture2D" uid="uid://da0s408e438fr" path="res://tileset/dungeon/floor_tiles16x16.png" id="5_qxwno"]
 [ext_resource type="Texture2D" uid="uid://cipme764kutej" path="res://tileset/dungeon/dungeon_tiles.png" id="6_hfups"]
+[ext_resource type="PackedScene" uid="uid://c6iu4lywivrgq" path="res://npcs/shaman/shaman.tscn" id="7_58olk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mvpq5"]
 texture = ExtResource("2_vm7w2")
@@ -514,9 +515,12 @@ layer_2/name = "ön"
 layer_2/tile_data = PackedInt32Array(458758, 458752, 0, 524294, 458752, 1, 589830, 458752, 0, 458759, 524288, 0, 524295, 524288, 1, 589831, 524288, 0, 458760, 589824, 0, 524296, 589824, 1, 589832, 589824, 0, 655366, 458752, 1, 720902, 458752, 2, 655367, 524288, 1, 720903, 524288, 2, 655368, 589824, 1, 720904, 589824, 2, 589835, 458752, 0, 655371, 458752, 1, 720907, 458752, 2, 589836, 524288, 0, 655372, 524288, 1, 720908, 524288, 2, 589837, 589824, 0, 655373, 589824, 1, 720909, 589824, 2, 327692, 524288, 8, 393228, 524288, 9, 196620, 524288, 8, 262156, 524288, 9, 65548, 524288, 9, 131084, 524288, 9, 12, 524288, 8, -327664, 720896, 2, -262128, 720896, 3, -327663, 786432, 2, -262127, 786432, 3, -327662, 851968, 2, -262126, 851968, 3)
 
 [node name="Player" parent="." instance=ExtResource("1_dhger")]
-position = Vector2(161, 167)
+position = Vector2(173, 161)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-1, 7)
 process_callback = 0
 position_smoothing_enabled = true
+
+[node name="Shaman" parent="." instance=ExtResource("7_58olk")]
+position = Vector2(135, 107)
