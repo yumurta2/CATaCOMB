@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://qrdhp27rwp2f"]
+[gd_scene load_steps=23 format=3 uid="uid://qrdhp27rwp2f"]
 
 [ext_resource type="PackedScene" uid="uid://dwxdq15unsvsn" path="res://player/player.tscn" id="1_dhger"]
 [ext_resource type="Texture2D" uid="uid://dhb1bewbok7vo" path="res://tileset/outside/outside1.png" id="2_vm7w2"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://1ke877ir43uu" path="res://collide/collide.tscn" id="8_6jtd4"]
 [ext_resource type="PackedScene" uid="uid://1vrd7xu1pjyx" path="res://enemies/red_mob/red_mob.tscn" id="9_yw4v6"]
 [ext_resource type="PackedScene" uid="uid://c2f61spj3gu4l" path="res://damage_zone/damage_zone.tscn" id="10_ulk42"]
+[ext_resource type="FontFile" uid="uid://bcruet1yxf71e" path="res://PixelOperator8.ttf" id="11_75vyb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mvpq5"]
 texture = ExtResource("2_vm7w2")
@@ -539,7 +540,7 @@ layer_4/tile_data = PackedInt32Array(589830, 458752, 0, 655366, 458752, 1, 72090
 [node name="Player" parent="." instance=ExtResource("1_dhger")]
 unique_name_in_owner = true
 z_index = 5
-position = Vector2(167, 161)
+position = Vector2(166, 352)
 collision_layer = 3
 collision_mask = 3
 
@@ -1040,3 +1041,16 @@ position = Vector2(-185, 37)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RedMob5/DamageZone"]
 position = Vector2(0.5, -1)
 shape = SubResource("RectangleShape2D_578lr")
+
+[node name="Tutorial" type="Label" parent="."]
+offset_left = 98.0
+offset_top = 378.0
+offset_right = 237.0
+offset_bottom = 437.0
+theme_override_fonts/font = ExtResource("11_75vyb")
+theme_override_font_sizes/font_size = 8
+text = "WASD
+SPACE
+J"
+horizontal_alignment = 1
+vertical_alignment = 1
