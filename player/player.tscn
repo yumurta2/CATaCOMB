@@ -1,10 +1,12 @@
 [gd_scene load_steps=22 format=3 uid="uid://dwxdq15unsvsn"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_miod8"]
+
 [ext_resource type="Texture2D" uid="uid://c8v67qsylmafb" path="res://player/Main_Character_Walk_Front_32x32_f4-sheet.png" id="2_lypoc"]
 [ext_resource type="Texture2D" uid="uid://ris64f7xfljh" path="res://player/Main_Character_Roll_32x32_f8.png" id="2_top28"]
 [ext_resource type="Texture2D" uid="uid://codedu7ibs3kp" path="res://player/Main_Character_Walk_16x32_f4.png" id="2_xtxva"]
 [ext_resource type="Texture2D" uid="uid://dfpsnqhbpgoin" path="res://player/Main_Character_Walk_Back_32x32_f4-sheet.png" id="4_754bc"]
+
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0rheo"]
 atlas = ExtResource("2_top28")
