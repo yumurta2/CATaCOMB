@@ -125,6 +125,8 @@ animations = [{
 size = Vector2(11, 18)
 
 [node name="RedMob" type="CharacterBody2D"]
+light_mask = 99
+visibility_layer = 99
 script = ExtResource("1_lnq7e")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -135,5 +137,7 @@ animation = &"attack"
 autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 99
+visibility_layer = 99
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_2btgr")

@@ -605,8 +605,12 @@ visibility_layer = 99
 shape = SubResource("RectangleShape2D_q8shr")
 
 [node name="DamageZone" parent="." instance=ExtResource("15_5ceu6")]
+light_mask = 99
+visibility_layer = 227
 
 [node name="hit_zone" type="CollisionShape2D" parent="DamageZone"]
+light_mask = 99
+visibility_layer = 99
 position = Vector2(0, -22)
 scale = Vector2(1.54518, 0.828889)
 shape = SubResource("CapsuleShape2D_4x204")

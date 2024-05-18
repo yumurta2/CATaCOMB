@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4w1wtcsl6may"
-path="res://.godot/imported/Mob2_Attack_32x32_f7.png-be7d84b9ff4657bdcb5c18dc3048be12.ctex"
+uid="uid://k5xy03d38s3b"
+path="res://.godot/imported/Mob2_Idle_32x32.png-040b7d7ff26272beca7b1d91edce8dc9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemies/Mob2_Attack_32x32_f7.png"
-dest_files=["res://.godot/imported/Mob2_Attack_32x32_f7.png-be7d84b9ff4657bdcb5c18dc3048be12.ctex"]
+source_file="res://enemies/big_red_mob/Mob2_Idle_32x32.png"
+dest_files=["res://.godot/imported/Mob2_Idle_32x32.png-040b7d7ff26272beca7b1d91edce8dc9.ctex"]
 
 [params]
 

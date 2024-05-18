@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var label_health = $Label_Health
 @onready var label_tangled_yarns = $Label_Tangled_Yarns
+@onready var shaman = $"../Npcs/Shaman"
 
 @onready var game_manager = $"../GameManager"
 @onready var animation_player = $AnimationPlayer
@@ -29,6 +30,8 @@ func _physics_process(delta):
 	if not dodging:
 		directionX = Input.get_axis("move_left", "move_right")
 		directionY = Input.get_axis("move_up", "move_down")
+		if Input.is_action_just_pressed("interact"):
+			shaman.interact()
 
 		if directionX == -1:
 			last_direction = "left"
