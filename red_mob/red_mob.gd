@@ -29,7 +29,7 @@ func _physics_process(delta):
 		perform_update(delta)
 		
 func perform_update(delta):
-	directionX = randi_range(-1,1) 
+	directionX = randi_range(-1,1)
 	directionY = randi_range(-1,1)
 func damage(num):
 	pass
