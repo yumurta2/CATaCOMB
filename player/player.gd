@@ -9,7 +9,7 @@ const ROLL_TIME = 0.3
 var last_direction = "right"
 var dodging = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var directionX 
+var directionX
 var directionY
 var maxHealth = 100
 var currentHealth = 100
@@ -29,7 +29,11 @@ func _physics_process(delta):
 			last_direction = "up"
 		elif directionY == 1:
 			last_direction = "down"
-		change_animation(last_direction)
+		
+		if directionX == 0 and directionY == 0:
+			change_animation(last_direction , "idle")
+		else:
+			change_animation(last_direction , "walk")
 
 		if directionX:
 			velocity.x = directionX * WALK_SPEED
@@ -61,8 +65,12 @@ func dodge(last_direction):
 		animated_sprite.flip_h = false
 		velocity.x = 1 * ROLL_SPEED
 	elif last_direction == "up":
+		animated_sprite.play("roll_up")
+		animated_sprite.flip_h = false
 		velocity.y = -1 * ROLL_SPEED
 	elif last_direction == "down":
+		animated_sprite.play("roll_down")
+		animated_sprite.flip_h = false
 		velocity.y = 1 * ROLL_SPEED
 func light_attack(last_direction):
 	if last_direction == "left":
@@ -79,19 +87,19 @@ func light_attack(last_direction):
 		pass
 	elif last_direction == "down":
 		pass
-func change_animation(last_direction):
+func change_animation(last_direction, anim):
 	if last_direction == "left":
 		animated_sprite.flip_h = true
-		animated_sprite.play("walk_right")
+		animated_sprite.play(anim + "_right")
 	elif last_direction == "right":
 		animated_sprite.flip_h = false
-		animated_sprite.play("walk_right")
+		animated_sprite.play(anim + "_right")
 	elif last_direction == "up":
 		animated_sprite.flip_h = false
-		animated_sprite.play("walk_up")
+		animated_sprite.play(anim + "_up")
 	elif last_direction == "down":
 		animated_sprite.flip_h = false
-		animated_sprite.play("walk_down")
+		animated_sprite.play(anim +"_down")
 func damage(num):
 	currentHealth -= clamp(num , 0 ,maxHealth)
 	dodging = true
@@ -100,9 +108,8 @@ func damage(num):
 	dodging = false
 	if currentHealth <= 0:
 		die()
-func die(): 
+func die():
 	set_physics_process(false)
 	animated_sprite.play("death")
 	await get_tree().create_timer(0.6).timeout
 	get_tree().reload_current_scene()
-
