@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2yjrpcoskpqw"
-path="res://.godot/imported/boss1_achievement.png-71d01f00ef8422dfe9c690226b94e5d6.ctex"
+uid="uid://0dumcnw87pwh"
+path="res://.godot/imported/Main_Character_Death_32x32_f4.png-371a1fb328fa230106da5c7e322a63fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://boss1_achievement.png"
-dest_files=["res://.godot/imported/boss1_achievement.png-71d01f00ef8422dfe9c690226b94e5d6.ctex"]
+source_file="res://player/Main_Character_Death_32x32_f4.png"
+dest_files=["res://.godot/imported/Main_Character_Death_32x32_f4.png-371a1fb328fa230106da5c7e322a63fd.ctex"]
 
 [params]
 

@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+#selam
 @onready var animated_sprite = $AnimatedSprite2D
 
 @export var SPEED = 100.0
