@@ -505,10 +505,13 @@ sources/3 = SubResource("TileSetAtlasSource_jygq3")
 sources/4 = SubResource("TileSetAtlasSource_ck1cp")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1d4r"]
+size = Vector2(20, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40y85"]
+size = Vector2(20, 25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjk36"]
+size = Vector2(22, 26)
 
 [node name="Game" type="Node2D"]
 
@@ -816,14 +819,20 @@ position = Vector2(512, 30)
 [node name="DamageZone" parent="RedMob" instance=ExtResource("10_ulk42")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RedMob/DamageZone"]
+light_mask = 99
+visibility_layer = 99
+position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_o1d4r")
 
 [node name="RedMob2" parent="." instance=ExtResource("9_yw4v6")]
-position = Vector2(501, -4)
+position = Vector2(562, 24)
 
 [node name="DamageZone" parent="RedMob2" instance=ExtResource("10_ulk42")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RedMob2/DamageZone"]
+light_mask = 99
+visibility_layer = 99
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_40y85")
 
 [node name="RedMob3" parent="." instance=ExtResource("9_yw4v6")]
@@ -834,6 +843,7 @@ light_mask = 3
 visibility_layer = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RedMob3/DamageZone"]
-light_mask = 3
-visibility_layer = 3
+light_mask = 99
+visibility_layer = 99
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_yjk36")

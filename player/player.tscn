@@ -190,5 +190,7 @@ theme_override_fonts/font = ExtResource("6_qf78n")
 theme_override_font_sizes/font_size = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 99
+visibility_layer = 99
 position = Vector2(-0.5, 7.5)
 shape = SubResource("RectangleShape2D_q8shr")
