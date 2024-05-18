@@ -31,9 +31,9 @@ func _physics_process(delta):
 			last_direction = "down"
 		
 		if directionX == 0 and directionY == 0:
-			change_animation(last_direction , "idle")
+			change_animation(  "idle")
 		else:
-			change_animation(last_direction , "walk")
+			change_animation(  "walk")
 
 		if directionX:
 			velocity.x = directionX * WALK_SPEED
@@ -45,17 +45,17 @@ func _physics_process(delta):
 			velocity.y = move_toward(velocity.y, 0, WALK_SPEED)
 
 		if Input.is_action_just_pressed("roll"):
-			dodge(last_direction)
+			dodge()
 			dodging = true
 			await get_tree().create_timer(ROLL_TIME).timeout  # adjust the time as needed
 			dodging = false
 		if Input.is_action_just_pressed("light_attack"):
-			light_attack(last_direction)
+			light_attack()
 			dodging = true
 			await get_tree().create_timer(0.3).timeout  # adjust the time as needed
 			dodging = false
 	move_and_slide()
-func dodge(last_direction):
+func dodge():
 	if last_direction == "left":
 		animated_sprite.play("roll_right")
 		animated_sprite.flip_h = true
@@ -72,7 +72,7 @@ func dodge(last_direction):
 		animated_sprite.play("roll_down")
 		animated_sprite.flip_h = false
 		velocity.y = 1 * ROLL_SPEED
-func light_attack(last_direction):
+func light_attack():
 	if last_direction == "left":
 		animated_sprite.play("light_attack")
 		animated_sprite.flip_h = true
@@ -87,7 +87,7 @@ func light_attack(last_direction):
 		pass
 	elif last_direction == "down":
 		pass
-func change_animation(last_direction, anim):
+func change_animation( anim):
 	if last_direction == "left":
 		animated_sprite.flip_h = true
 		animated_sprite.play(anim + "_right")

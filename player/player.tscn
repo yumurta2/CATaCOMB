@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://dwxdq15unsvsn"]
+[gd_scene load_steps=62 format=3 uid="uid://dwxdq15unsvsn"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_miod8"]
 [ext_resource type="Texture2D" uid="uid://cproc4y0xqvcg" path="res://player/Main_Character_Death_32x32_f4.png" id="2_g07ih"]
@@ -7,13 +7,14 @@
 [ext_resource type="Texture2D" uid="uid://ris64f7xfljh" path="res://player/Main_Character_Roll_32x32_f8.png" id="2_top28"]
 [ext_resource type="Texture2D" uid="uid://codedu7ibs3kp" path="res://player/Main_Character_Walk_16x32_f4.png" id="2_xtxva"]
 [ext_resource type="Texture2D" uid="uid://dfpsnqhbpgoin" path="res://player/Main_Character_Walk_Back_32x32_f4-sheet.png" id="4_754bc"]
-[ext_resource type="Texture2D" uid="uid://b0pyeyeqty1kd" path="res://player/Main_Character_Idle_Front_32x32_f4-sheet-sheet.png" id="4_dphbn"]
+[ext_resource type="Texture2D" uid="uid://dbpqjq8rxxhov" path="res://player/Main_Character_Idle_Front_32x32_f4-sheet-sheet.png" id="4_dphbn"]
 [ext_resource type="Texture2D" uid="uid://dwyah2o0t5we7" path="res://player/Main_Character_Attack_96x96_f15.png" id="4_o8040"]
-[ext_resource type="Texture2D" uid="uid://fjogj1vl6i4d" path="res://player/Main_Character_Idle_32x32_f8.png" id="5_5fci8"]
-[ext_resource type="Texture2D" uid="uid://cmp0eqdv18tgh" path="res://player/Main_Character_Roll_Front_32x32_f8.png" id="5_ifbis"]
-[ext_resource type="Texture2D" uid="uid://dksy5wvx4u2ig" path="res://player/Main_Character_Idle_back_32x32_f8.png" id="6_adthx"]
+[ext_resource type="Texture2D" uid="uid://bqbddcqed7wei" path="res://player/Main_Character_Idle_32x32_f8.png" id="5_5fci8"]
+[ext_resource type="Texture2D" uid="uid://cc8su8a6tr8hy" path="res://player/Main_Character_Roll_Front_32x32_f8.png" id="5_ifbis"]
+[ext_resource type="Texture2D" uid="uid://d07ia77drtibr" path="res://player/Main_Character_Idle_back_32x32_f8.png" id="6_adthx"]
 [ext_resource type="FontFile" uid="uid://bcruet1yxf71e" path="res://PixelOperator8.ttf" id="6_qf78n"]
-[ext_resource type="Texture2D" uid="uid://cy8y07qvi02vh" path="res://player/Main_Character_Roll_back_32x32_f8.png" id="7_o2esy"]
+[ext_resource type="Texture2D" uid="uid://cbbitijag7wvy" path="res://player/Main_Character_Roll_back_32x32_f8.png" id="7_o2esy"]
+[ext_resource type="PackedScene" uid="uid://c2f61spj3gu4l" path="res://damage_zone/damage_zone.tscn" id="15_5ceu6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7lnh4"]
 atlas = ExtResource("2_r36pt")
@@ -368,6 +369,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q8shr"]
 size = Vector2(9, 15)
 
+[sub_resource type="Animation" id="Animation_v3dai"]
+resource_name = "attack"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a4wm4"]
+_data = {
+"attack": SubResource("Animation_v3dai")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rnr5h"]
+
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(160, 176)
 script = ExtResource("1_miod8")
@@ -389,5 +400,17 @@ theme_override_font_sizes/font_size = 8
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 99
 visibility_layer = 99
-position = Vector2(-0.5, 7.5)
+position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_q8shr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_a4wm4")
+}
+
+[node name="DamageZone" parent="AnimationPlayer" instance=ExtResource("15_5ceu6")]
+position = Vector2(160, 176)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimationPlayer/DamageZone"]
+position = Vector2(18, 6)
+shape = SubResource("RectangleShape2D_rnr5h")
