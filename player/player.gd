@@ -2,8 +2,10 @@ extends CharacterBody2D
 #selam
 #AS
 @onready var animated_sprite = $AnimatedSprite2D
-@onready var label = $Label
+@onready var label_health = $Label_Health
+@onready var label_tangled_yarns = $Label_Tangled_Yarns
 
+@onready var game_manager = $"../GameManager"
 @onready var animation_player = $AnimationPlayer
 
 @onready var hit_zone = $DamageZone/hit_zone
@@ -19,9 +21,11 @@ var directionY
 var maxHealth = 100
 var currentHealth = 100
 func _ready():
-	label.text = "HP:" + str(currentHealth)
+	label_health.text = "HP:" + str(currentHealth)
+	label_tangled_yarns.text = "tangled yarns:" +str(game_manager.get_yarns())
 func _physics_process(delta):
-	label.text = "HP:" + str(currentHealth)
+	label_tangled_yarns.text = "tangled yarns:" + str(game_manager.get_yarns())
+	label_health.text = "HP:" + str(currentHealth)
 	if not dodging:
 		directionX = Input.get_axis("move_left", "move_right")
 		directionY = Input.get_axis("move_up", "move_down")

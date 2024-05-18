@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://qrdhp27rwp2f"]
+[gd_scene load_steps=25 format=3 uid="uid://qrdhp27rwp2f"]
 
 [ext_resource type="Script" path="res://GameManager.gd" id="1_3jc27"]
 [ext_resource type="PackedScene" uid="uid://dwxdq15unsvsn" path="res://player/player.tscn" id="1_dhger"]
@@ -13,7 +13,6 @@
 [ext_resource type="PackedScene" uid="uid://c2f61spj3gu4l" path="res://damage_zone/damage_zone.tscn" id="10_ulk42"]
 [ext_resource type="FontFile" uid="uid://bcruet1yxf71e" path="res://PixelOperator8.ttf" id="11_75vyb"]
 [ext_resource type="PackedScene" uid="uid://cupf3m6hfmx0b" path="res://sack/sack.tscn" id="12_boxpd"]
-[ext_resource type="PackedScene" uid="uid://dd5eiepcualvt" path="res://collectible/yarn/yarn.tscn" id="14_xov7h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mvpq5"]
 texture = ExtResource("2_vm7w2")
@@ -1019,6 +1018,9 @@ position = Vector2(246, 401)
 [node name="Sack4" parent="Sacks" instance=ExtResource("12_boxpd")]
 position = Vector2(94, 408)
 
+[node name="Sack5" parent="Sacks" instance=ExtResource("12_boxpd")]
+position = Vector2(525, 76)
+
 [node name="RedMobs" type="Node" parent="."]
 
 [node name="RedMob" parent="RedMobs" instance=ExtResource("9_yw4v6")]
@@ -1077,9 +1079,3 @@ shape = SubResource("RectangleShape2D_578lr")
 
 [node name="Shaman" parent="Npcs" instance=ExtResource("7_58olk")]
 position = Vector2(114, -45)
-
-[node name="Yarn" parent="." instance=ExtResource("14_xov7h")]
-position = Vector2(120, 442)
-
-[node name="Yarn2" parent="." instance=ExtResource("14_xov7h")]
-position = Vector2(166, 444)
