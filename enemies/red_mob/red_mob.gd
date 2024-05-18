@@ -4,6 +4,10 @@ var time_accumulator = 0.0
 var update_interval = 0.5
 var directionX = 0
 var directionY = 0
+@onready var animated_sprite = $AnimatedSprite2D
+
+var maxHealth = 50
+var currentHealth = 50
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -31,5 +35,16 @@ func _physics_process(delta):
 func perform_update(delta):
 	directionX = randi_range(-1,1)
 	directionY = randi_range(-1,1)
+
 func damage(num):
-	pass
+	currentHealth -= clamp(num , 0 ,maxHealth)
+	set_physics_process(false)
+	animated_sprite.play("damage")
+	await get_tree().create_timer(0.2).timeout
+	set_physics_process(true)
+	if currentHealth <= 0:
+		die()
+func die():
+	set_physics_process(false)
+	animated_sprite.play("death")
+	await get_tree().create_timer(0.6).timeout

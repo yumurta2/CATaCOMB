@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cipme764kutej" path="res://tileset/dungeon/dungeon_tiles.png" id="6_hfups"]
 [ext_resource type="PackedScene" uid="uid://c6iu4lywivrgq" path="res://npcs/shaman/shaman.tscn" id="7_58olk"]
 [ext_resource type="PackedScene" uid="uid://1ke877ir43uu" path="res://collide/collide.tscn" id="8_6jtd4"]
-[ext_resource type="PackedScene" uid="uid://1vrd7xu1pjyx" path="res://red_mob/red_mob.tscn" id="9_yw4v6"]
+[ext_resource type="PackedScene" uid="uid://1vrd7xu1pjyx" path="res://enemies/red_mob/red_mob.tscn" id="9_yw4v6"]
 [ext_resource type="PackedScene" uid="uid://c2f61spj3gu4l" path="res://damage_zone/damage_zone.tscn" id="10_ulk42"]
 [ext_resource type="FontFile" uid="uid://bcruet1yxf71e" path="res://PixelOperator8.ttf" id="11_75vyb"]
 
@@ -540,7 +540,7 @@ layer_4/tile_data = PackedInt32Array(589830, 458752, 0, 655366, 458752, 1, 72090
 [node name="Player" parent="." instance=ExtResource("1_dhger")]
 unique_name_in_owner = true
 z_index = 5
-position = Vector2(170, 334)
+position = Vector2(165, 364)
 collision_layer = 3
 collision_mask = 3
 
@@ -990,18 +990,17 @@ position = Vector2(298, 93)
 scale = Vector2(0.298194, 0.95915)
 
 [node name="RedMob" parent="." instance=ExtResource("9_yw4v6")]
-position = Vector2(512, 30)
+position = Vector2(555, 120)
 
 [node name="DamageZone" parent="RedMob" instance=ExtResource("10_ulk42")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RedMob/DamageZone"]
 light_mask = 99
 visibility_layer = 99
-position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_o1d4r")
 
 [node name="RedMob2" parent="." instance=ExtResource("9_yw4v6")]
-position = Vector2(562, 24)
+position = Vector2(603, -5)
 
 [node name="DamageZone" parent="RedMob2" instance=ExtResource("10_ulk42")]
 
@@ -1012,7 +1011,7 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_40y85")
 
 [node name="RedMob3" parent="." instance=ExtResource("9_yw4v6")]
-position = Vector2(479, 37)
+position = Vector2(601, 63)
 
 [node name="DamageZone" parent="RedMob3" instance=ExtResource("10_ulk42")]
 light_mask = 3
