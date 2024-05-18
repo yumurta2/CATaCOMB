@@ -1,6 +1,7 @@
 extends CharacterBody2D
 #selam
 @onready var animated_sprite = $AnimatedSprite2D
+@onready var label = $Label
 
 @export var WALK_SPEED = 100.0
 @export var ROLL_SPEED = 300.0
@@ -12,8 +13,10 @@ var directionX
 var directionY
 var maxHealth = 100
 var currentHealth = 100
+func _ready():
+	label.text = "HP:" + str(currentHealth)
 func _physics_process(delta):
-
+	label.text = "HP:" + str(currentHealth)
 	if not dodging:
 		directionX = Input.get_axis("move_left", "move_right")
 		directionY = Input.get_axis("move_up", "move_down")
@@ -72,8 +75,10 @@ func change_animation(last_direction):
 		animated_sprite.play("walk_down")
 func damage(num):
 	currentHealth -= clamp(num , 0 ,maxHealth) 
-	die()
-func die():
 	if currentHealth <= 0:
-		set_physics_process(false)
+		die()
+func die(): 
+	set_physics_process(false)
+	await get_tree().create_timer(0.5).timeout
+	get_tree().reload_current_scene()
 

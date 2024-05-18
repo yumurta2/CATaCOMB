@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://dwxdq15unsvsn"]
+[gd_scene load_steps=24 format=3 uid="uid://dwxdq15unsvsn"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_miod8"]
 [ext_resource type="Texture2D" uid="uid://c8v67qsylmafb" path="res://player/Main_Character_Walk_Front_32x32_f4-sheet.png" id="2_lypoc"]
 [ext_resource type="Texture2D" uid="uid://ris64f7xfljh" path="res://player/Main_Character_Roll_32x32_f8.png" id="2_top28"]
 [ext_resource type="Texture2D" uid="uid://codedu7ibs3kp" path="res://player/Main_Character_Walk_16x32_f4.png" id="2_xtxva"]
 [ext_resource type="Texture2D" uid="uid://dfpsnqhbpgoin" path="res://player/Main_Character_Walk_Back_32x32_f4-sheet.png" id="4_754bc"]
+[ext_resource type="FontFile" uid="uid://bcruet1yxf71e" path="res://PixelOperator8.ttf" id="6_qf78n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0rheo"]
 atlas = ExtResource("2_top28")
@@ -146,6 +147,14 @@ position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_gacg4")
 animation = &"walk_right"
 autoplay = "walk_right"
+
+[node name="Label" type="Label" parent="."]
+offset_left = -20.0
+offset_top = -27.0
+offset_right = 20.0
+offset_bottom = -4.0
+theme_override_fonts/font = ExtResource("6_qf78n")
+theme_override_font_sizes/font_size = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 7.5)
