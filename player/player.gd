@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var WALK_SPEED = 100.0
 @export var ROLL_SPEED = 300.0
 const ROLL_TIME = 0.3
-var last_direction
+var last_direction = "right"
 var dodging = false
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var directionX 
@@ -48,7 +48,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("light_attack"):
 			light_attack(last_direction)
 			dodging = true
-			await get_tree().create_timer(1).timeout  # adjust the time as needed
+			await get_tree().create_timer(0.4).timeout  # adjust the time as needed
 			dodging = false
 	move_and_slide()
 func dodge(last_direction):

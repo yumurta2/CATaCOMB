@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cgd40cgvwupmt"
-path="res://.godot/imported/Mob6_Walk_16x16_f4.png-17e755073a3877c68b5de0981686268d.ctex"
+uid="uid://dwyah2o0t5we7"
+path="res://.godot/imported/Main_Character_Attack_96x96_f15.png-c706ccc8fbc75227202dc570559e3346.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://enemies/Mob6_Walk_16x16_f4.png"
-dest_files=["res://.godot/imported/Mob6_Walk_16x16_f4.png-17e755073a3877c68b5de0981686268d.ctex"]
+source_file="res://player/Main_Character_Attack_96x96_f15.png"
+dest_files=["res://.godot/imported/Main_Character_Attack_96x96_f15.png-c706ccc8fbc75227202dc570559e3346.ctex"]
 
 [params]
 
