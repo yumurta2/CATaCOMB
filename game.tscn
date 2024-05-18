@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://qrdhp27rwp2f"]
+[gd_scene load_steps=22 format=3 uid="uid://qrdhp27rwp2f"]
 
 [ext_resource type="PackedScene" uid="uid://dwxdq15unsvsn" path="res://player/player.tscn" id="1_dhger"]
 [ext_resource type="Texture2D" uid="uid://dhb1bewbok7vo" path="res://tileset/outside/outside1.png" id="2_vm7w2"]
@@ -505,13 +505,19 @@ sources/3 = SubResource("TileSetAtlasSource_jygq3")
 sources/4 = SubResource("TileSetAtlasSource_ck1cp")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o1d4r"]
-size = Vector2(20, 27)
+size = Vector2(22, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_40y85"]
-size = Vector2(20, 25)
+size = Vector2(22, 26)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yjk36"]
 size = Vector2(22, 26)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_72acw"]
+size = Vector2(21, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_578lr"]
+size = Vector2(21, 24)
 
 [node name="Game" type="Node2D"]
 
@@ -533,7 +539,7 @@ layer_4/tile_data = PackedInt32Array(589830, 458752, 0, 655366, 458752, 1, 72090
 [node name="Player" parent="." instance=ExtResource("1_dhger")]
 unique_name_in_owner = true
 z_index = 5
-position = Vector2(173, 161)
+position = Vector2(167, 161)
 collision_layer = 3
 collision_mask = 3
 
@@ -548,19 +554,19 @@ position = Vector2(102, -43)
 [node name="Colliders" type="Node" parent="."]
 
 [node name="Collide" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(115, 128)
+position = Vector2(115, 129)
 scale = Vector2(2.9782, 0.769822)
 
 [node name="Collide23" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(33, 113)
+position = Vector2(33, 115)
 scale = Vector2(2.9782, 0.769822)
 
 [node name="Collide24" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(73, 99)
+position = Vector2(73, 100)
 scale = Vector2(1.9782, 0.769822)
 
 [node name="Collide25" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(85, 113)
+position = Vector2(84, 114)
 scale = Vector2(0.898205, 0.769822)
 
 [node name="Collide17" parent="Colliders" instance=ExtResource("8_6jtd4")]
@@ -580,7 +586,7 @@ position = Vector2(-11, -8)
 scale = Vector2(0.818204, 1.32982)
 
 [node name="Collide30" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(26, -34)
+position = Vector2(25, -38)
 scale = Vector2(2.9782, 0.689821)
 
 [node name="Collide31" parent="Colliders" instance=ExtResource("8_6jtd4")]
@@ -617,7 +623,7 @@ position = Vector2(539, -98)
 scale = Vector2(9.53689, 0.852811)
 
 [node name="Collide47" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(432, -46)
+position = Vector2(432, -49)
 scale = Vector2(1.05689, 4.61281)
 
 [node name="Collide48" parent="Colliders" instance=ExtResource("8_6jtd4")]
@@ -685,7 +691,7 @@ position = Vector2(485, 265)
 scale = Vector2(6.86927, 1.4039)
 
 [node name="Collide63" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(373, 188)
+position = Vector2(418, 175)
 scale = Vector2(1.36486, 8.48249)
 
 [node name="Collide64" parent="Colliders" instance=ExtResource("8_6jtd4")]
@@ -729,11 +735,11 @@ position = Vector2(273, 113)
 scale = Vector2(4.1382, 0.769822)
 
 [node name="Collide6" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(380, 49)
+position = Vector2(380, 51)
 scale = Vector2(6.09819, 0.769822)
 
 [node name="Collide7" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(374, -1)
+position = Vector2(374, -10)
 scale = Vector2(6.09819, 0.769822)
 
 [node name="Collide15" parent="Colliders" instance=ExtResource("8_6jtd4")]
@@ -741,22 +747,17 @@ position = Vector2(85, -126)
 scale = Vector2(8.41962, 0.769822)
 
 [node name="Collide8" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(312, -19)
-rotation = -3.14159
-scale = Vector2(1.30032, 1.04345)
+position = Vector2(295, -36)
+rotation = -2.39731
+scale = Vector2(3.69679, 1.21725)
 
 [node name="Collide19" parent="Colliders" instance=ExtResource("8_6jtd4")]
 position = Vector2(32, -205)
 rotation = -3.14159
 scale = Vector2(1.30032, 1.68345)
 
-[node name="Collide9" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(289, -32)
-rotation = -3.14159
-scale = Vector2(0.998708, 0.748035)
-
 [node name="Collide10" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(274, -35)
+position = Vector2(274, -39)
 rotation = -3.14159
 scale = Vector2(0.998708, 0.748035)
 
@@ -896,7 +897,7 @@ position = Vector2(7, 91)
 scale = Vector2(0.634002, 2.99124)
 
 [node name="Collide14" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(-4, -79)
+position = Vector2(-4, -81)
 scale = Vector2(0.634002, 4.99124)
 
 [node name="Collide16" parent="Colliders" instance=ExtResource("8_6jtd4")]
@@ -904,7 +905,7 @@ position = Vector2(168, -86)
 scale = Vector2(0.634002, 4.43124)
 
 [node name="Collide5" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(313, 72)
+position = Vector2(313, 77)
 scale = Vector2(0.658194, 3.31915)
 
 [node name="RedMob" parent="." instance=ExtResource("9_yw4v6")]
@@ -915,7 +916,7 @@ position = Vector2(512, 30)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RedMob/DamageZone"]
 light_mask = 99
 visibility_layer = 99
-position = Vector2(0, -1.5)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_o1d4r")
 
 [node name="RedMob2" parent="." instance=ExtResource("9_yw4v6")]
@@ -926,7 +927,7 @@ position = Vector2(562, 24)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RedMob2/DamageZone"]
 light_mask = 99
 visibility_layer = 99
-position = Vector2(0, -0.5)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_40y85")
 
 [node name="RedMob3" parent="." instance=ExtResource("9_yw4v6")]
@@ -941,3 +942,21 @@ light_mask = 99
 visibility_layer = 99
 position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_yjk36")
+
+[node name="RedMob4" parent="." instance=ExtResource("9_yw4v6")]
+position = Vector2(-218, 18)
+
+[node name="DamageZone" parent="RedMob4" instance=ExtResource("10_ulk42")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedMob4/DamageZone"]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_72acw")
+
+[node name="RedMob5" parent="." instance=ExtResource("9_yw4v6")]
+position = Vector2(-185, 37)
+
+[node name="DamageZone" parent="RedMob5" instance=ExtResource("10_ulk42")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RedMob5/DamageZone"]
+position = Vector2(0.5, -1)
+shape = SubResource("RectangleShape2D_578lr")

@@ -45,6 +45,11 @@ func _physics_process(delta):
 			dodging = true
 			await get_tree().create_timer(ROLL_TIME).timeout  # adjust the time as needed
 			dodging = false
+		if Input.is_action_just_pressed("light_attack"):
+			light_attack(last_direction)
+			dodging = true
+			await get_tree().create_timer(1).timeout  # adjust the time as needed
+			dodging = false
 	move_and_slide()
 func dodge(last_direction):
 	if last_direction == "left":
@@ -59,7 +64,21 @@ func dodge(last_direction):
 		velocity.y = -1 * ROLL_SPEED
 	elif last_direction == "down":
 		velocity.y = 1 * ROLL_SPEED
-	
+func light_attack(last_direction):
+	if last_direction == "left":
+		animated_sprite.play("light_attack")
+		animated_sprite.flip_h = true
+		velocity.x = 0
+		velocity.y = 0
+	elif last_direction == "right":
+		animated_sprite.play("light_attack")
+		animated_sprite.flip_h = false
+		velocity.x = 0
+		velocity.y = 0
+	elif last_direction == "up":
+		pass
+	elif last_direction == "down":
+		pass
 func change_animation(last_direction):
 	if last_direction == "left":
 		animated_sprite.flip_h = true
