@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://qrdhp27rwp2f"]
+[gd_scene load_steps=26 format=3 uid="uid://qrdhp27rwp2f"]
 
 [ext_resource type="Script" path="res://GameManager.gd" id="1_3jc27"]
 [ext_resource type="PackedScene" uid="uid://dwxdq15unsvsn" path="res://player/player.tscn" id="1_dhger"]
@@ -514,6 +514,10 @@ size = Vector2(24.5, 29)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1e627"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_36o7d"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0vc82"]
+
 [node name="Game" type="Node2D"]
 
 [node name="GameManager" type="Node" parent="."]
@@ -537,14 +541,14 @@ layer_4/tile_data = PackedInt32Array(589830, 458752, 0, 655366, 458752, 1, 72090
 [node name="Player" parent="." instance=ExtResource("1_dhger")]
 unique_name_in_owner = true
 z_index = 5
-position = Vector2(165, 364)
+position = Vector2(161, 232)
 collision_layer = 3
 collision_mask = 3
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-1, 7)
+position = Vector2(0, -16)
 process_callback = 0
-position_smoothing_enabled = true
+limit_bottom = 330
 
 [node name="Colliders" type="Node" parent="."]
 
@@ -737,6 +741,14 @@ scale = Vector2(6.86927, 1.4039)
 position = Vector2(417, 183)
 scale = Vector2(1.36486, 8.48249)
 
+[node name="Collide70" parent="Colliders" instance=ExtResource("8_6jtd4")]
+position = Vector2(205, 231)
+scale = Vector2(1.36486, 9.72249)
+
+[node name="Collide71" parent="Colliders" instance=ExtResource("8_6jtd4")]
+position = Vector2(119, 233)
+scale = Vector2(1.36486, 9.56249)
+
 [node name="Collide64" parent="Colliders" instance=ExtResource("8_6jtd4")]
 position = Vector2(449, 72)
 scale = Vector2(1.24487, 2.80249)
@@ -771,6 +783,10 @@ scale = Vector2(2.73821, 0.769822)
 
 [node name="Collide2" parent="Colliders" instance=ExtResource("8_6jtd4")]
 position = Vector2(209, 128)
+scale = Vector2(2.9782, 0.769822)
+
+[node name="Collide9" parent="Colliders" instance=ExtResource("8_6jtd4")]
+position = Vector2(162, 335)
 scale = Vector2(2.9782, 0.769822)
 
 [node name="Collide3" parent="Colliders" instance=ExtResource("8_6jtd4")]
@@ -909,10 +925,10 @@ position = Vector2(298, 93)
 scale = Vector2(0.298194, 0.95915)
 
 [node name="Tutorial" type="Label" parent="."]
-offset_left = 98.0
-offset_top = 378.0
-offset_right = 237.0
-offset_bottom = 437.0
+offset_left = 94.0
+offset_top = 246.0
+offset_right = 233.0
+offset_bottom = 305.0
 theme_override_fonts/font = ExtResource("11_75vyb")
 theme_override_font_sizes/font_size = 8
 text = "WASD
@@ -982,15 +998,6 @@ position = Vector2(217, -501)
 
 [node name="Sack16" parent="Sacks" instance=ExtResource("12_boxpd")]
 position = Vector2(235, -490)
-
-[node name="Sack2" parent="Sacks" instance=ExtResource("12_boxpd")]
-position = Vector2(245, 359)
-
-[node name="Sack3" parent="Sacks" instance=ExtResource("12_boxpd")]
-position = Vector2(246, 401)
-
-[node name="Sack4" parent="Sacks" instance=ExtResource("12_boxpd")]
-position = Vector2(94, 408)
 
 [node name="Sack5" parent="Sacks" instance=ExtResource("12_boxpd")]
 position = Vector2(525, 76)
@@ -1117,12 +1124,18 @@ flip_h = true
 position = Vector2(120, 81)
 message = "Baturoski oleeeey"
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Npcs/Villager2/Area2D" index="0"]
+shape = SubResource("CircleShape2D_36o7d")
+
 [node name="AnimatedSprite2D" parent="Npcs/Villager2" index="2"]
 animation = &"new_animation"
 autoplay = "new_animation"
 
 [node name="Villager3" parent="Npcs" instance=ExtResource("15_dm22j")]
 position = Vector2(205, 71)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Npcs/Villager3/Area2D" index="0"]
+shape = SubResource("CircleShape2D_0vc82")
 
 [node name="AnimatedSprite2D" parent="Npcs/Villager3" index="2"]
 animation = &"new_animation_1"
@@ -1132,6 +1145,9 @@ flip_h = true
 [node name="Villager4" parent="Npcs" instance=ExtResource("15_dm22j")]
 position = Vector2(179, 56)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Npcs/Villager4/Area2D" index="0"]
+shape = SubResource("CircleShape2D_0vc82")
+
 [node name="AnimatedSprite2D" parent="Npcs/Villager4" index="2"]
 animation = &"new_animation_2"
 autoplay = "new_animation_2"
@@ -1140,12 +1156,18 @@ flip_h = true
 [node name="Villager5" parent="Npcs" instance=ExtResource("15_dm22j")]
 position = Vector2(128, 58)
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Npcs/Villager5/Area2D" index="0"]
+shape = SubResource("CircleShape2D_0vc82")
+
 [node name="AnimatedSprite2D" parent="Npcs/Villager5" index="2"]
 animation = &"new_animation_3"
 autoplay = "new_animation_3"
 
 [node name="Villager6" parent="Npcs" instance=ExtResource("15_dm22j")]
 position = Vector2(203, 51)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Npcs/Villager6/Area2D" index="0"]
+shape = SubResource("CircleShape2D_0vc82")
 
 [node name="AnimatedSprite2D" parent="Npcs/Villager6" index="2"]
 autoplay = "new_animation_4"
@@ -1158,6 +1180,18 @@ flip_h = true
 [connection signal="body_entered" from="RedMobs/RedMob10/DamageZoneOnlyPlayer" to="RedMobs/RedMob10/DamageZoneOnlyPlayer" method="_on_body_entered"]
 [connection signal="body_entered" from="RedMobs/RedMob11/DamageZoneOnlyPlayer" to="RedMobs/RedMob11/DamageZoneOnlyPlayer" method="_on_body_entered"]
 [connection signal="body_entered" from="RedMobs/RedMob12/DamageZoneOnlyPlayer" to="RedMobs/RedMob12/DamageZoneOnlyPlayer" method="_on_body_entered"]
+[connection signal="body_entered" from="Npcs/Villager/Area2D" to="Npcs/Villager" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Npcs/Villager/Area2D" to="Npcs/Villager" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Npcs/Villager2/Area2D" to="Npcs/Villager2" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Npcs/Villager2/Area2D" to="Npcs/Villager2" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Npcs/Villager3/Area2D" to="Npcs/Villager3" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Npcs/Villager3/Area2D" to="Npcs/Villager3" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Npcs/Villager4/Area2D" to="Npcs/Villager4" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Npcs/Villager4/Area2D" to="Npcs/Villager4" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Npcs/Villager5/Area2D" to="Npcs/Villager5" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Npcs/Villager5/Area2D" to="Npcs/Villager5" method="_on_area_2d_body_exited"]
+[connection signal="body_entered" from="Npcs/Villager6/Area2D" to="Npcs/Villager6" method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Npcs/Villager6/Area2D" to="Npcs/Villager6" method="_on_area_2d_body_exited"]
 
 [editable path="Npcs/Villager"]
 [editable path="Npcs/Villager2"]

@@ -8,13 +8,15 @@ extends Node2D
 func _ready():
 	label.text = message
 	label.visible = false
-	area.connect("body_entered", Callable(self, "_on_area_entered"))
-	area.connect("body_exited", Callable(self, "_on_area_exited"))
 
-func _on_area_entered(body):
-	if body.is_in_group("player"):
-		label.visible = true
 
-func _on_area_exited(body):
-	if body.is_in_group("player"):
-		label.visible = false
+
+
+func _on_area_2d_body_entered(body):
+	if body is CharacterBody2D and body.name == "Player":
+		label.visible = true # Replace with function body.
+
+
+
+func _on_area_2d_body_exited(body):
+	label.visible = false # Replace with function body.
