@@ -9,7 +9,7 @@ extends CharacterBody2D
 @onready var animation_player = $AnimationPlayer
 
 @onready var hit_zone = $DamageZone/hit_zone
-@onready var shaman = $"../Npcs/Shaman"  # Shaman node'unu buraya tanımlayın
+@onready var shaman = $"../Npcs/Shaman"
 
 @export var WALK_SPEED = 100.0
 @export var ROLL_SPEED = 300.0
