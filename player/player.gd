@@ -1,15 +1,18 @@
 extends CharacterBody2D
-
+#selam
+#AS
 @onready var animated_sprite = $AnimatedSprite2D
 @onready var health_bar = $"/root/Game/UI/Control/HealthBar"
 @onready var potions_label = $"/root/Game/UI/Control/Label"
 @onready var yarns_label = $"/root/Game/UI/Control/Label2"
 
+@onready var shaman = $"../Npcs/Shaman"
+
+
 @onready var game_manager = $"../GameManager"
 @onready var animation_player = $AnimationPlayer
 
 @onready var hit_zone = $DamageZone/hit_zone
-@onready var shaman = $"../Npcs/Shaman"
 
 @export var WALK_SPEED = 100.0
 @export var ROLL_SPEED = 300.0
@@ -23,18 +26,22 @@ var directionY
 var maxHealth = 100
 var currentHealth = 100
 var potions = 0
-
 func _ready():
-	update_ui()
-	hit_zone.connect("body_entered", Callable(self, "_on_hit_zone_body_entered"))
-
+	health_bar.value = currentHealth
+	health_bar.max_value = maxHealth
+	yarns_label.text = str(game_manager.get_yarns())
+	potions_label.text = str(game_manager.get_potions())
 func _physics_process(delta):
+	health_bar.value = currentHealth
+	health_bar.max_value = maxHealth
+	yarns_label.text =  str(game_manager.get_yarns())
+	potions = game_manager.get_potions()
+	potions_label.text = str(potions)
 	if Input.is_action_just_pressed("drink_pot"):
 		if potions > 0:
-			game_manager.decrease_potions()
-			currentHealth = clamp(currentHealth + 10, 0, maxHealth)
-			update_ui()
-
+			game_manager.decres_potions()
+			currentHealth = clamp(currentHealth + 10 , 0 ,maxHealth)
+	
 	if not dodging:
 		directionX = Input.get_axis("move_left", "move_right")
 		directionY = Input.get_axis("move_up", "move_down")
@@ -49,11 +56,11 @@ func _physics_process(delta):
 			last_direction = "up"
 		elif directionY == 1:
 			last_direction = "down"
-
+		
 		if directionX == 0 and directionY == 0:
-			change_animation("idle")
+			change_animation(  "idle")
 		else:
-			change_animation("walk")
+			change_animation(  "walk")
 
 		if directionX:
 			velocity.x = directionX * WALK_SPEED
@@ -68,23 +75,14 @@ func _physics_process(delta):
 			if can_dodge:
 				dodge()
 			dodging = true
-			await get_tree().create_timer(ROLL_TIME).timeout
+			await get_tree().create_timer(ROLL_TIME).timeout  # adjust the time as needed
 			dodging = false
 		if Input.is_action_just_pressed("light_attack"):
 			light_attack()
 			dodging = true
-			await get_tree().create_timer(0.3).timeout
+			await get_tree().create_timer(0.3).timeout  # adjust the time as needed
 			dodging = false
-
-	update_ui()
 	move_and_slide()
-
-func update_ui():
-	health_bar.value = currentHealth
-	health_bar.max_value = maxHealth
-	potions_label.text = str(game_manager.get_potions())
-	yarns_label.text = str(game_manager.get_yarns())
-
 func dodge():
 	can_dodge = false
 	dodging = true
@@ -140,7 +138,6 @@ func light_attack():
 		animated_sprite.flip_h = false
 		velocity.x = 0
 		velocity.y = 0
-
 func change_animation(anim):
 	if last_direction == "left":
 		animated_sprite.flip_h = true
@@ -153,23 +150,17 @@ func change_animation(anim):
 		animated_sprite.play(anim + "_up")
 	elif last_direction == "down":
 		animated_sprite.flip_h = false
-		animated_sprite.play(anim + "_down")
-
+		animated_sprite.play(anim +"_down")
 func damage(num):
-	currentHealth -= clamp(num, 0, maxHealth)
+	currentHealth -= clamp(num , 0 ,maxHealth)
 	dodging = true
 	animated_sprite.play("damage")
 	await get_tree().create_timer(0.2).timeout
 	dodging = false
 	if currentHealth <= 0:
 		die()
-
 func die():
 	set_physics_process(false)
 	animated_sprite.play("death")
 	await get_tree().create_timer(0.6).timeout
 	get_tree().reload_current_scene()
-
-func _on_hit_zone_body_entered(body):
-	if body.has_method("damage"):
-		body.damage(10)

@@ -1,11 +1,13 @@
-[gd_scene load_steps=52 format=3 uid="uid://cwnewop2dd0dj"]
+[gd_scene load_steps=55 format=3 uid="uid://dhyxe4fx1vveb"]
 
 [ext_resource type="Texture2D" uid="uid://b62up3nf0s8jj" path="res://boss_cat/Bosscat_Attack1_128x128_f9_HIT6-7.png" id="1_dqtlf"]
+[ext_resource type="Script" path="res://boss_cat/boss_cat.gd" id="1_kj1u4"]
 [ext_resource type="Texture2D" uid="uid://dwnvkfoovprs0" path="res://boss_cat/Bosscat_Attack2_128x128_F8.png" id="2_nya8y"]
 [ext_resource type="Texture2D" uid="uid://ba4wlwvrf1kqd" path="res://boss_cat/Bosscat_Attack3_128x128_f9_HIT5.png" id="3_c8d5h"]
 [ext_resource type="Texture2D" uid="uid://5cagjs1g4ivf" path="res://boss_cat/Bosscat_CrabWalk_128x128_f8.png" id="4_26hag"]
 [ext_resource type="Texture2D" uid="uid://dxf40vy225k5x" path="res://boss_cat/Bosscat_idle_128x128_f5.png" id="5_gcjyt"]
 [ext_resource type="Texture2D" uid="uid://dvivb2km7v5et" path="res://boss_cat/Bosscat_walk_128x128_f4.png" id="6_btybu"]
+[ext_resource type="FontFile" uid="uid://bcruet1yxf71e" path="res://PixelOperator8.ttf" id="8_n8681"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a6ft6"]
 atlas = ExtResource("1_dqtlf")
@@ -342,16 +344,32 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_clfb2"]
-radius = 47.0
-height = 110.0
+radius = 37.0
+height = 74.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_t5oh2"]
+bg_color = Color(0, 0, 0, 0.470588)
 
 [node name="BossCat" type="CharacterBody2D"]
+z_index = 4
+script = ExtResource("1_kj1u4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_86f80")
-animation = &"idle"
-autoplay = "idle"
+animation = &"attack2"
+autoplay = "crab_walk"
+frame_progress = 0.924188
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 5)
+position = Vector2(-1, 26)
 shape = SubResource("CapsuleShape2D_clfb2")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -79.0
+offset_top = -59.0
+offset_right = 79.0
+offset_bottom = -33.0
+theme_override_fonts/font = ExtResource("8_n8681")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = SubResource("StyleBoxFlat_t5oh2")
+autowrap_mode = 2

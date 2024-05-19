@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://qrdhp27rwp2f"]
+[gd_scene load_steps=40 format=3 uid="uid://qrdhp27rwp2f"]
 
 [ext_resource type="Script" path="res://GameManager.gd" id="1_3jc27"]
 [ext_resource type="PackedScene" uid="uid://dwxdq15unsvsn" path="res://player/player.tscn" id="1_dhger"]
@@ -11,19 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://1ke877ir43uu" path="res://collide/collide.tscn" id="8_6jtd4"]
 [ext_resource type="PackedScene" uid="uid://1vrd7xu1pjyx" path="res://enemies/red_mob/red_mob.tscn" id="9_yw4v6"]
 [ext_resource type="FontFile" uid="uid://bcruet1yxf71e" path="res://PixelOperator8.ttf" id="11_75vyb"]
-[ext_resource type="Texture2D" uid="uid://de2wjclxiq8pp" path="res://ui/Yarn_UI.png" id="11_ndaep"]
+[ext_resource type="Texture2D" uid="uid://bomy8d7h3o72a" path="res://ui/Yarn_UI.png" id="11_ndaep"]
 [ext_resource type="PackedScene" uid="uid://cupf3m6hfmx0b" path="res://sack/sack.tscn" id="12_boxpd"]
 [ext_resource type="PackedScene" uid="uid://bawrvanbmwsie" path="res://damage_zone_only_player/damage_zone_only_player.tscn" id="13_2jri5"]
 [ext_resource type="PackedScene" uid="uid://p7b3o723ngib" path="res://villager.tscn" id="15_dm22j"]
-[ext_resource type="PackedScene" uid="uid://bbj81v67507tf" path="res://sacksack/sacksack.tscn" id="15_va3rc"]
 [ext_resource type="Texture2D" uid="uid://c3a8hm0ttv16j" path="res://ui/healt_hud.png" id="16_1erua"]
 [ext_resource type="Texture2D" uid="uid://cl8ldtn7o3g65" path="res://ui/pot_96x96.png" id="16_ojdc0"]
 [ext_resource type="Texture2D" uid="uid://b10rtm5mjaim1" path="res://ui/healt.png" id="17_2fi5k"]
-[ext_resource type="Script" path="res://Boss.gd" id="20_3n8wa"]
-[ext_resource type="Texture2D" uid="uid://b62up3nf0s8jj" path="res://boss_cat/Bosscat_Attack1_128x128_f9_HIT6-7.png" id="21_1shqb"]
-[ext_resource type="Texture2D" uid="uid://dxf40vy225k5x" path="res://boss_cat/Bosscat_idle_128x128_f5.png" id="22_cma8v"]
-[ext_resource type="Texture2D" uid="uid://dvivb2km7v5et" path="res://boss_cat/Bosscat_walk_128x128_f4.png" id="23_jeprw"]
-[ext_resource type="Texture2D" uid="uid://5cagjs1g4ivf" path="res://boss_cat/Bosscat_CrabWalk_128x128_f8.png" id="24_oumug"]
+[ext_resource type="PackedScene" uid="uid://dhyxe4fx1vveb" path="res://boss_cat/boss_cat.tscn" id="20_5dt22"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mvpq5"]
 texture = ExtResource("2_vm7w2")
@@ -553,214 +548,9 @@ bg_color = Color(0, 0, 0, 0.513726)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uxd5x"]
 bg_color = Color(0, 0, 0, 0.501961)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vvwbf"]
-atlas = ExtResource("21_1shqb")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3jcsj"]
-atlas = ExtResource("21_1shqb")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lwq4t"]
-atlas = ExtResource("21_1shqb")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s73hx"]
-atlas = ExtResource("21_1shqb")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w72j8"]
-atlas = ExtResource("21_1shqb")
-region = Rect2(512, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_grheb"]
-atlas = ExtResource("21_1shqb")
-region = Rect2(640, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jrxud"]
-atlas = ExtResource("21_1shqb")
-region = Rect2(768, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7lugi"]
-atlas = ExtResource("21_1shqb")
-region = Rect2(896, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_76gj7"]
-atlas = ExtResource("21_1shqb")
-region = Rect2(1024, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_leh0r"]
-atlas = ExtResource("22_cma8v")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wl2xr"]
-atlas = ExtResource("22_cma8v")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1supj"]
-atlas = ExtResource("22_cma8v")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qne8b"]
-atlas = ExtResource("22_cma8v")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tqdm5"]
-atlas = ExtResource("22_cma8v")
-region = Rect2(512, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v84ep"]
-atlas = ExtResource("23_jeprw")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_so0uq"]
-atlas = ExtResource("23_jeprw")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vtalk"]
-atlas = ExtResource("23_jeprw")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ppae6"]
-atlas = ExtResource("23_jeprw")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4wyoe"]
-atlas = ExtResource("24_oumug")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ueuen"]
-atlas = ExtResource("24_oumug")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_day81"]
-atlas = ExtResource("24_oumug")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fceg1"]
-atlas = ExtResource("24_oumug")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4rhj8"]
-atlas = ExtResource("24_oumug")
-region = Rect2(512, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8484l"]
-atlas = ExtResource("24_oumug")
-region = Rect2(640, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yyjh0"]
-atlas = ExtResource("24_oumug")
-region = Rect2(768, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4shtx"]
-atlas = ExtResource("24_oumug")
-region = Rect2(896, 0, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_yw26y"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vvwbf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3jcsj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lwq4t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s73hx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w72j8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_grheb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jrxud")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7lugi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_76gj7")
-}],
-"loop": true,
-"name": &"attack_down",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_leh0r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wl2xr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1supj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qne8b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tqdm5")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v84ep")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_so0uq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vtalk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ppae6")
-}],
-"loop": true,
-"name": &"walk_down",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4wyoe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ueuen")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_day81")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fceg1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4rhj8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8484l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yyjh0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4shtx")
-}],
-"loop": true,
-"name": &"walk_right",
-"speed": 5.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_glygr"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h7axe"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7sv6f"]
+radius = 60.0
+height = 120.0
 
 [node name="Game" type="Node2D"]
 
@@ -1276,34 +1066,13 @@ position = Vector2(485, 236)
 [node name="Sack19" parent="Sacks" instance=ExtResource("12_boxpd")]
 position = Vector2(539, 187)
 
-[node name="Sack10" parent="Sacks" instance=ExtResource("12_boxpd")]
-position = Vector2(185, -488)
-
-[node name="Sack11" parent="Sacks" instance=ExtResource("12_boxpd")]
-position = Vector2(185, -501)
-
-[node name="Sack12" parent="Sacks" instance=ExtResource("12_boxpd")]
-position = Vector2(202, -500)
-
-[node name="Sack13" parent="Sacks" instance=ExtResource("12_boxpd")]
-position = Vector2(202, -487)
-
-[node name="Sack14" parent="Sacks" instance=ExtResource("12_boxpd")]
-position = Vector2(218, -486)
-
-[node name="Sack15" parent="Sacks" instance=ExtResource("12_boxpd")]
-position = Vector2(217, -501)
-
-[node name="Sack16" parent="Sacks" instance=ExtResource("12_boxpd")]
-position = Vector2(235, -490)
-
 [node name="Sack5" parent="Sacks" instance=ExtResource("12_boxpd")]
 position = Vector2(525, 76)
 
 [node name="RedMobs" type="Node" parent="."]
 
 [node name="RedMob6" parent="RedMobs" instance=ExtResource("9_yw4v6")]
-position = Vector2(-198, 46)
+position = Vector2(561, 57)
 
 [node name="DamageZoneOnlyPlayer" parent="RedMobs/RedMob6" instance=ExtResource("13_2jri5")]
 light_mask = 99
@@ -1316,7 +1085,7 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_fadep")
 
 [node name="RedMob7" parent="RedMobs" instance=ExtResource("9_yw4v6")]
-position = Vector2(-166, 29)
+position = Vector2(593, 40)
 
 [node name="DamageZoneOnlyPlayer" parent="RedMobs/RedMob7" instance=ExtResource("13_2jri5")]
 light_mask = 99
@@ -1329,7 +1098,7 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_fadep")
 
 [node name="RedMob8" parent="RedMobs" instance=ExtResource("9_yw4v6")]
-position = Vector2(-204, 11)
+position = Vector2(555, 22)
 
 [node name="DamageZoneOnlyPlayer" parent="RedMobs/RedMob8" instance=ExtResource("13_2jri5")]
 light_mask = 99
@@ -1355,7 +1124,7 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_fadep")
 
 [node name="RedMob10" parent="RedMobs" instance=ExtResource("9_yw4v6")]
-position = Vector2(-202, 83)
+position = Vector2(-209, 73)
 
 [node name="DamageZoneOnlyPlayer" parent="RedMobs/RedMob10" instance=ExtResource("13_2jri5")]
 light_mask = 99
@@ -1368,7 +1137,7 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_fadep")
 
 [node name="RedMob11" parent="RedMobs" instance=ExtResource("9_yw4v6")]
-position = Vector2(-137, 38)
+position = Vector2(-178, 109)
 
 [node name="DamageZoneOnlyPlayer" parent="RedMobs/RedMob11" instance=ExtResource("13_2jri5")]
 light_mask = 99
@@ -1381,7 +1150,7 @@ position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_fadep")
 
 [node name="RedMob12" parent="RedMobs" instance=ExtResource("9_yw4v6")]
-position = Vector2(-210, -34)
+position = Vector2(-204, 2)
 
 [node name="DamageZoneOnlyPlayer" parent="RedMobs/RedMob12" instance=ExtResource("13_2jri5")]
 light_mask = 99
@@ -1604,29 +1373,14 @@ autowrap_mode = 2
 autoplay = "new_animation_4"
 flip_h = true
 
-[node name="Sacksack" parent="." instance=ExtResource("15_va3rc")]
-position = Vector2(241, -513)
+[node name="BossCat" parent="." instance=ExtResource("20_5dt22")]
+position = Vector2(120, -491)
 
-[node name="Boss" type="CharacterBody2D" parent="."]
-position = Vector2(126, -462)
-script = ExtResource("20_3n8wa")
+[node name="DamageZoneOnlyPlayer" parent="BossCat" instance=ExtResource("13_2jri5")]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Boss"]
-position = Vector2(-4, -21)
-sprite_frames = SubResource("SpriteFrames_yw26y")
-animation = &"walk_down"
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boss"]
-position = Vector2(-3, -13)
-scale = Vector2(2.62458, 2.66874)
-shape = SubResource("CapsuleShape2D_glygr")
-
-[node name="Area2D" type="Area2D" parent="Boss"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/Area2D"]
-position = Vector2(-4, 23)
-scale = Vector2(3.92, 0.8)
-shape = SubResource("CapsuleShape2D_h7axe")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BossCat/DamageZoneOnlyPlayer"]
+position = Vector2(-2, 20)
+shape = SubResource("CapsuleShape2D_7sv6f")
 
 [connection signal="body_entered" from="RedMobs/RedMob6/DamageZoneOnlyPlayer" to="RedMobs/RedMob6/DamageZoneOnlyPlayer" method="_on_body_entered"]
 [connection signal="body_entered" from="RedMobs/RedMob7/DamageZoneOnlyPlayer" to="RedMobs/RedMob7/DamageZoneOnlyPlayer" method="_on_body_entered"]
@@ -1651,7 +1405,7 @@ shape = SubResource("CapsuleShape2D_h7axe")
 [connection signal="body_exited" from="Npcs/Villager5/Area2D" to="Npcs/Villager5" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Npcs/Villager6/Area2D" to="Npcs/Villager6" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Npcs/Villager6/Area2D" to="Npcs/Villager6" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="Boss/Area2D" to="Player" method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="BossCat/DamageZoneOnlyPlayer" to="BossCat/DamageZoneOnlyPlayer" method="_on_body_entered"]
 
 [editable path="Npcs/Villager"]
 [editable path="Npcs/Villager2"]
