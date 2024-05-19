@@ -29,4 +29,3 @@ func new_loot(posX, posY):
 		pass
 	elif rasgele ==3:
 		pass
-

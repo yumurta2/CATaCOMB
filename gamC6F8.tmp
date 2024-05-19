@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://qrdhp27rwp2f"]
+[gd_scene load_steps=21 format=3 uid="uid://qrdhp27rwp2f"]
 
 [ext_resource type="Script" path="res://GameManager.gd" id="1_3jc27"]
 [ext_resource type="PackedScene" uid="uid://dwxdq15unsvsn" path="res://player/player.tscn" id="1_dhger"]
@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://1ke877ir43uu" path="res://collide/collide.tscn" id="8_6jtd4"]
 [ext_resource type="PackedScene" uid="uid://1vrd7xu1pjyx" path="res://enemies/red_mob/red_mob.tscn" id="9_yw4v6"]
 [ext_resource type="FontFile" uid="uid://bcruet1yxf71e" path="res://PixelOperator8.ttf" id="11_75vyb"]
-[ext_resource type="Script" path="res://Manager.gd" id="11_u3633"]
 [ext_resource type="PackedScene" uid="uid://cupf3m6hfmx0b" path="res://sack/sack.tscn" id="12_boxpd"]
 [ext_resource type="PackedScene" uid="uid://bawrvanbmwsie" path="res://damage_zone_only_player/damage_zone_only_player.tscn" id="13_2jri5"]
 
@@ -993,7 +992,6 @@ position = Vector2(94, 408)
 position = Vector2(525, 76)
 
 [node name="RedMobs" type="Node" parent="."]
-script = ExtResource("11_u3633")
 
 [node name="RedMob6" parent="RedMobs" instance=ExtResource("9_yw4v6")]
 position = Vector2(-198, 46)

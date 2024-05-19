@@ -14,9 +14,10 @@ extends CharacterBody2D
 @export var WALK_SPEED = 100.0
 @export var ROLL_SPEED = 300.0
 const ROLL_TIME = 0.3
+const ROLL_COOLDOWN = 3.0
 var last_direction = "right"
 var dodging = false
-# Get the gravity from the project settings to be synced with RigidBody nodes.
+var can_dodge = true
 var directionX
 var directionY
 var maxHealth = 100
@@ -57,7 +58,8 @@ func _physics_process(delta):
 			velocity.y = move_toward(velocity.y, 0, WALK_SPEED)
 
 		if Input.is_action_just_pressed("roll"):
-			dodge()
+			if can_dodge:
+				dodge()
 			dodging = true
 			await get_tree().create_timer(ROLL_TIME).timeout  # adjust the time as needed
 			dodging = false
@@ -68,6 +70,14 @@ func _physics_process(delta):
 			dodging = false
 	move_and_slide()
 func dodge():
+	can_dodge = false
+	dodging = true
+	play_dodge_animation()
+	await get_tree().create_timer(ROLL_TIME).timeout
+	dodging = false
+	await cooldown()
+
+func play_dodge_animation() -> void:
 	if last_direction == "left":
 		animated_sprite.play("roll_right")
 		animated_sprite.flip_h = true
@@ -84,6 +94,11 @@ func dodge():
 		animated_sprite.play("roll_down")
 		animated_sprite.flip_h = false
 		velocity.y = 1 * ROLL_SPEED
+
+func cooldown() -> void:
+	await get_tree().create_timer(ROLL_COOLDOWN).timeout
+	can_dodge = true
+
 func light_attack():
 	if last_direction == "left":
 		animation_player.play("left_light_attack")
