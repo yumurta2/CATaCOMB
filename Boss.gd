@@ -5,6 +5,8 @@ extends CharacterBody2D
 
 @export var WALK_SPEED = 100.0
 @export var ATTACK_COOLDOWN = 2.0
+@export var maxHealth = 200
+var currentHealth = maxHealth
 var attack_ready = true
 
 var player = null
@@ -47,4 +49,13 @@ func attack() -> void:
 func _on_attack_area_entered(body):
 	if body.is_in_group("player") and animated_sprite.frame == 5:  # Belirli bir frame kontrolü
 		if body.has_method("damage"):
-			body.call("damage", 10)
+			body.damage(10)
+
+func damage(amount):
+	currentHealth -= amount
+	if currentHealth <= 0:
+		die()
+
+func die():
+	animated_sprite.play("death")
+	queue_free()  # Boss'u sahneden kaldır
