@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://qrdhp27rwp2f"]
+[gd_scene load_steps=24 format=3 uid="uid://qrdhp27rwp2f"]
 
 [ext_resource type="Script" path="res://GameManager.gd" id="1_3jc27"]
 [ext_resource type="PackedScene" uid="uid://dwxdq15unsvsn" path="res://player/player.tscn" id="1_dhger"]
@@ -14,6 +14,7 @@
 [ext_resource type="Script" path="res://Manager.gd" id="11_u3633"]
 [ext_resource type="PackedScene" uid="uid://cupf3m6hfmx0b" path="res://sack/sack.tscn" id="12_boxpd"]
 [ext_resource type="PackedScene" uid="uid://bawrvanbmwsie" path="res://damage_zone_only_player/damage_zone_only_player.tscn" id="13_2jri5"]
+[ext_resource type="PackedScene" uid="uid://p7b3o723ngib" path="res://villager.tscn" id="15_dm22j"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mvpq5"]
 texture = ExtResource("2_vm7w2")
@@ -510,6 +511,8 @@ sources/4 = SubResource("TileSetAtlasSource_ck1cp")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fadep"]
 size = Vector2(24.5, 29)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1e627"]
 
 [node name="Game" type="Node2D"]
 
@@ -1091,6 +1094,63 @@ shape = SubResource("RectangleShape2D_fadep")
 [node name="Shaman" parent="Npcs" instance=ExtResource("7_58olk")]
 position = Vector2(114, -45)
 
+[node name="Villager" parent="Npcs" instance=ExtResource("15_dm22j")]
+position = Vector2(183, 95)
+
+[node name="Area2D" parent="Npcs/Villager" index="0"]
+position = Vector2(4, 7)
+scale = Vector2(2.08, 2.04)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Npcs/Villager/Area2D" index="0"]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_1e627")
+
+[node name="Label" parent="Npcs/Villager" index="1"]
+text = "selamın aleyküm"
+
+[node name="AnimatedSprite2D" parent="Npcs/Villager" index="2"]
+animation = &"default"
+autoplay = "default"
+flip_h = true
+
+[node name="Villager2" parent="Npcs" instance=ExtResource("15_dm22j")]
+position = Vector2(120, 81)
+message = "Baturoski oleeeey"
+
+[node name="AnimatedSprite2D" parent="Npcs/Villager2" index="2"]
+animation = &"new_animation"
+autoplay = "new_animation"
+
+[node name="Villager3" parent="Npcs" instance=ExtResource("15_dm22j")]
+position = Vector2(205, 71)
+
+[node name="AnimatedSprite2D" parent="Npcs/Villager3" index="2"]
+animation = &"new_animation_1"
+autoplay = "new_animation_1"
+flip_h = true
+
+[node name="Villager4" parent="Npcs" instance=ExtResource("15_dm22j")]
+position = Vector2(179, 56)
+
+[node name="AnimatedSprite2D" parent="Npcs/Villager4" index="2"]
+animation = &"new_animation_2"
+autoplay = "new_animation_2"
+flip_h = true
+
+[node name="Villager5" parent="Npcs" instance=ExtResource("15_dm22j")]
+position = Vector2(128, 58)
+
+[node name="AnimatedSprite2D" parent="Npcs/Villager5" index="2"]
+animation = &"new_animation_3"
+autoplay = "new_animation_3"
+
+[node name="Villager6" parent="Npcs" instance=ExtResource("15_dm22j")]
+position = Vector2(203, 51)
+
+[node name="AnimatedSprite2D" parent="Npcs/Villager6" index="2"]
+autoplay = "new_animation_4"
+flip_h = true
+
 [connection signal="body_entered" from="RedMobs/RedMob6/DamageZoneOnlyPlayer" to="RedMobs/RedMob6/DamageZoneOnlyPlayer" method="_on_body_entered"]
 [connection signal="body_entered" from="RedMobs/RedMob7/DamageZoneOnlyPlayer" to="RedMobs/RedMob7/DamageZoneOnlyPlayer" method="_on_body_entered"]
 [connection signal="body_entered" from="RedMobs/RedMob8/DamageZoneOnlyPlayer" to="RedMobs/RedMob8/DamageZoneOnlyPlayer" method="_on_body_entered"]
@@ -1098,3 +1158,10 @@ position = Vector2(114, -45)
 [connection signal="body_entered" from="RedMobs/RedMob10/DamageZoneOnlyPlayer" to="RedMobs/RedMob10/DamageZoneOnlyPlayer" method="_on_body_entered"]
 [connection signal="body_entered" from="RedMobs/RedMob11/DamageZoneOnlyPlayer" to="RedMobs/RedMob11/DamageZoneOnlyPlayer" method="_on_body_entered"]
 [connection signal="body_entered" from="RedMobs/RedMob12/DamageZoneOnlyPlayer" to="RedMobs/RedMob12/DamageZoneOnlyPlayer" method="_on_body_entered"]
+
+[editable path="Npcs/Villager"]
+[editable path="Npcs/Villager2"]
+[editable path="Npcs/Villager3"]
+[editable path="Npcs/Villager4"]
+[editable path="Npcs/Villager5"]
+[editable path="Npcs/Villager6"]
