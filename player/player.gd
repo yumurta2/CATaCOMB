@@ -26,6 +26,7 @@ var potions = 0
 
 func _ready():
 	update_ui()
+	hit_zone.connect("body_entered", Callable(self, "_on_hit_zone_body_entered"))
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("drink_pot"):
@@ -168,3 +169,7 @@ func die():
 	animated_sprite.play("death")
 	await get_tree().create_timer(0.6).timeout
 	get_tree().reload_current_scene()
+
+func _on_hit_zone_body_entered(body):
+	if body.has_method("damage"):
+		body.damage(10)
