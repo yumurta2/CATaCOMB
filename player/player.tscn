@@ -1,19 +1,21 @@
-[gd_scene load_steps=65 format=3 uid="uid://dwxdq15unsvsn"]
+[gd_scene load_steps=75 format=3 uid="uid://dwxdq15unsvsn"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="1_miod8"]
-[ext_resource type="Texture2D" uid="uid://0dumcnw87pwh" path="res://player/Main_Character_Death_32x32_f4.png" id="2_g07ih"]
+[ext_resource type="Texture2D" uid="uid://cproc4y0xqvcg" path="res://player/Main_Character_Death_32x32_f4.png" id="2_g07ih"]
 [ext_resource type="Texture2D" uid="uid://c8v67qsylmafb" path="res://player/Main_Character_Walk_Front_32x32_f4-sheet.png" id="2_lypoc"]
 [ext_resource type="Texture2D" uid="uid://tp3vw40grxj7" path="res://player/Main_Character_Hit_32x32_f4-sheet.png" id="2_r36pt"]
 [ext_resource type="Texture2D" uid="uid://ris64f7xfljh" path="res://player/Main_Character_Roll_32x32_f8.png" id="2_top28"]
-[ext_resource type="Texture2D" uid="uid://cykv6cwg8pwdg" path="res://player/Main_Character_Walk_16x32_f4.png" id="2_xtxva"]
+[ext_resource type="Texture2D" uid="uid://codedu7ibs3kp" path="res://player/Main_Character_Walk_16x32_f4.png" id="2_xtxva"]
 [ext_resource type="Texture2D" uid="uid://dfpsnqhbpgoin" path="res://player/Main_Character_Walk_Back_32x32_f4-sheet.png" id="4_754bc"]
 [ext_resource type="Texture2D" uid="uid://dbpqjq8rxxhov" path="res://player/Main_Character_Idle_Front_32x32_f4-sheet-sheet.png" id="4_dphbn"]
 [ext_resource type="Texture2D" uid="uid://dwyah2o0t5we7" path="res://player/Main_Character_Attack_96x96_f15.png" id="4_o8040"]
+[ext_resource type="Texture2D" uid="uid://u00yxm64y8h5" path="res://player/Main_Character_NewAttack_Front_96x96_f15.png" id="4_ycc44"]
 [ext_resource type="Texture2D" uid="uid://bqbddcqed7wei" path="res://player/Main_Character_Idle_32x32_f8.png" id="5_5fci8"]
 [ext_resource type="Texture2D" uid="uid://cc8su8a6tr8hy" path="res://player/Main_Character_Roll_Front_32x32_f8.png" id="5_ifbis"]
 [ext_resource type="Texture2D" uid="uid://d07ia77drtibr" path="res://player/Main_Character_Idle_back_32x32_f8.png" id="6_adthx"]
 [ext_resource type="FontFile" uid="uid://bcruet1yxf71e" path="res://PixelOperator8.ttf" id="6_qf78n"]
 [ext_resource type="Texture2D" uid="uid://cbbitijag7wvy" path="res://player/Main_Character_Roll_back_32x32_f8.png" id="7_o2esy"]
+[ext_resource type="Texture2D" uid="uid://ddc1t2h32abnn" path="res://player/Main_Character_NewAttack_Back_96x96_f15.png" id="12_xhpbq"]
 [ext_resource type="PackedScene" uid="uid://c2f61spj3gu4l" path="res://damage_zone/damage_zone.tscn" id="15_5ceu6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7lnh4"]
@@ -27,6 +29,22 @@ region = Rect2(64, 0, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_ybe3t"]
 atlas = ExtResource("2_g07ih")
 region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vvj1r"]
+atlas = ExtResource("4_ycc44")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2fm8"]
+atlas = ExtResource("4_ycc44")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b2vh7"]
+atlas = ExtResource("4_ycc44")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sgv7r"]
+atlas = ExtResource("4_ycc44")
+region = Rect2(672, 0, 96, 96)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3uo75"]
 atlas = ExtResource("4_dphbn")
@@ -128,6 +146,22 @@ region = Rect2(128, 0, 32, 32)
 atlas = ExtResource("7_o2esy")
 region = Rect2(160, 0, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_l54sx"]
+atlas = ExtResource("12_xhpbq")
+region = Rect2(384, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ur58"]
+atlas = ExtResource("12_xhpbq")
+region = Rect2(480, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0kym"]
+atlas = ExtResource("12_xhpbq")
+region = Rect2(576, 0, 96, 96)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8yis3"]
+atlas = ExtResource("12_xhpbq")
+region = Rect2(672, 0, 96, 96)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_v7moi"]
 atlas = ExtResource("2_lypoc")
 region = Rect2(0, 0, 32, 32)
@@ -196,6 +230,23 @@ animations = [{
 "loop": false,
 "name": &"death",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vvj1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2fm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b2vh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sgv7r")
+}],
+"loop": false,
+"name": &"down_light_attack",
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -306,6 +357,23 @@ animations = [{
 "loop": true,
 "name": &"roll_up",
 "speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l54sx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ur58")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0kym")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8yis3")
+}],
+"loop": false,
+"name": &"up_light_attack",
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -581,7 +649,7 @@ script = ExtResource("1_miod8")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -5)
 sprite_frames = SubResource("SpriteFrames_gacg4")
-animation = &"right_light_attack"
+animation = &"down_light_attack"
 autoplay = "walk_right"
 
 [node name="Label_Health" type="Label" parent="."]
@@ -598,6 +666,10 @@ offset_left = -87.0
 offset_top = 12.0
 offset_right = -47.0
 offset_bottom = 35.0
+
+[node name="Label_Potions" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 99

@@ -1,10 +1,15 @@
 extends Node
 const YARN = preload("res://collectible/yarn/yarn.tscn")
-var tangled_yarns = 0
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+var tangled_yarns = 32
+var process : Dictionary
+var potions = 0
 
+func _ready():
+	pass
+func decres_potions():
+	potions-=1
+func get_potions():
+	return potions
 func get_yarns():
 	return tangled_yarns
 func set_yarns():
@@ -29,3 +34,16 @@ func new_loot(posX, posY):
 		pass
 	elif rasgele ==3:
 		pass
+func sell_tangled_yarns():
+	process = custom_mod(tangled_yarns)
+	tangled_yarns = process.remainder
+	potions += process.divisions
+
+func custom_mod(a: int):
+	var b = 5
+	var count := 0
+	var original_a := a
+	while a >= b:
+		a -= b
+		count += 1
+	return {"remainder": a, "divisions": count}

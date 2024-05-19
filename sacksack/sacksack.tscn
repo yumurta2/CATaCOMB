@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://bbj81v67507tf"]
+
+[ext_resource type="Texture2D" uid="uid://85k35gisgdqw" path="res://sacksack/Sack_Big.png" id="1_sri38"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_odsr7"]
+atlas = ExtResource("1_sri38")
+region = Rect2(0, 0, 16, 22)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vvf60"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_odsr7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ws12c"]
+radius = 8.0
+height = 24.0
+
+[node name="Sacksack" type="AnimatableBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_vvf60")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ws12c")

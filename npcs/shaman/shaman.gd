@@ -1,4 +1,5 @@
 extends Node2D
+@onready var game_manager = $"../../GameManager"
 
 @onready var shaman_buble = $shaman_buble
 
@@ -44,4 +45,4 @@ func _on_area_2d_body_exited(body):
 	shaman_buble.hide()
 
 func sell_yarns():
-	pass
+	game_manager.sell_tangled_yarns()

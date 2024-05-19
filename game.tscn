@@ -11,10 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://1ke877ir43uu" path="res://collide/collide.tscn" id="8_6jtd4"]
 [ext_resource type="PackedScene" uid="uid://1vrd7xu1pjyx" path="res://enemies/red_mob/red_mob.tscn" id="9_yw4v6"]
 [ext_resource type="FontFile" uid="uid://bcruet1yxf71e" path="res://PixelOperator8.ttf" id="11_75vyb"]
-[ext_resource type="Script" path="res://Manager.gd" id="11_u3633"]
 [ext_resource type="PackedScene" uid="uid://cupf3m6hfmx0b" path="res://sack/sack.tscn" id="12_boxpd"]
 [ext_resource type="PackedScene" uid="uid://bawrvanbmwsie" path="res://damage_zone_only_player/damage_zone_only_player.tscn" id="13_2jri5"]
 [ext_resource type="PackedScene" uid="uid://p7b3o723ngib" path="res://villager.tscn" id="15_dm22j"]
+[ext_resource type="PackedScene" uid="uid://bbj81v67507tf" path="res://sacksack/sacksack.tscn" id="15_va3rc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mvpq5"]
 texture = ExtResource("2_vm7w2")
@@ -1027,7 +1027,6 @@ position = Vector2(235, -490)
 position = Vector2(525, 76)
 
 [node name="RedMobs" type="Node" parent="."]
-script = ExtResource("11_u3633")
 
 [node name="RedMob6" parent="RedMobs" instance=ExtResource("9_yw4v6")]
 position = Vector2(-198, 46)
@@ -1330,6 +1329,9 @@ autowrap_mode = 2
 [node name="AnimatedSprite2D" parent="Npcs/Villager6" index="2"]
 autoplay = "new_animation_4"
 flip_h = true
+
+[node name="Sacksack" parent="." instance=ExtResource("15_va3rc")]
+position = Vector2(241, -513)
 
 [connection signal="body_entered" from="RedMobs/RedMob6/DamageZoneOnlyPlayer" to="RedMobs/RedMob6/DamageZoneOnlyPlayer" method="_on_body_entered"]
 [connection signal="body_entered" from="RedMobs/RedMob7/DamageZoneOnlyPlayer" to="RedMobs/RedMob7/DamageZoneOnlyPlayer" method="_on_body_entered"]

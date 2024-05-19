@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var label_health = $Label_Health
 @onready var label_tangled_yarns = $Label_Tangled_Yarns
 @onready var shaman = $"../Npcs/Shaman"
+@onready var label_potions = $Label_Potions
 
 @onready var game_manager = $"../GameManager"
 @onready var animation_player = $AnimationPlayer
@@ -22,12 +23,21 @@ var directionX
 var directionY
 var maxHealth = 100
 var currentHealth = 100
+var potions = 0
 func _ready():
 	label_health.text = "HP:" + str(currentHealth)
 	label_tangled_yarns.text = "tangled yarns:" +str(game_manager.get_yarns())
+	label_potions.text = "potions:" +str(game_manager.get_potions())
 func _physics_process(delta):
 	label_tangled_yarns.text = "tangled yarns:" + str(game_manager.get_yarns())
+	potions = game_manager.get_potions()
+	label_potions.text = "potions:" +str(potions)
 	label_health.text = "HP:" + str(currentHealth)
+	if Input.is_action_just_pressed("drink_pot"):
+		if potions > 0:
+			game_manager.decres_potions()
+			currentHealth = clamp(currentHealth + 10 , 0 ,maxHealth)
+	
 	if not dodging:
 		directionX = Input.get_axis("move_left", "move_right")
 		directionY = Input.get_axis("move_up", "move_down")
@@ -114,10 +124,16 @@ func light_attack():
 		velocity.y = 0
 	elif last_direction == "up":
 		animation_player.play("up_light_attack")
+		animated_sprite.play("up_light_attack")
 		animated_sprite.flip_h = false
+		velocity.x = 0
+		velocity.y = 0
 	elif last_direction == "down":
 		animation_player.play("down_light_attack")
+		animated_sprite.play("down_light_attack")
 		animated_sprite.flip_h = false
+		velocity.x = 0
+		velocity.y = 0
 func change_animation(anim):
 	if last_direction == "left":
 		animated_sprite.flip_h = true

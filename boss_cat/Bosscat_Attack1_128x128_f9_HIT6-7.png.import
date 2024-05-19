@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://85k35gisgdqw"
-path="res://.godot/imported/Sack_Big.png-b6f1d5e7992cb3ea8290ace9692928b0.ctex"
+uid="uid://b62up3nf0s8jj"
+path="res://.godot/imported/Bosscat_Attack1_128x128_f9_HIT6-7.png-3c43c45f99d686ca4ff6ffd8bfea4d66.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sack/Sack_Big.png"
-dest_files=["res://.godot/imported/Sack_Big.png-b6f1d5e7992cb3ea8290ace9692928b0.ctex"]
+source_file="res://boss_cat/Bosscat_Attack1_128x128_f9_HIT6-7.png"
+dest_files=["res://.godot/imported/Bosscat_Attack1_128x128_f9_HIT6-7.png-3c43c45f99d686ca4ff6ffd8bfea4d66.ctex"]
 
 [params]
 
