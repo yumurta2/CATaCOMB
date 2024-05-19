@@ -1,4 +1,4 @@
-[gd_scene load_steps=73 format=3 uid="uid://qrdhp27rwp2f"]
+[gd_scene load_steps=36 format=3 uid="uid://qrdhp27rwp2f"]
 
 [ext_resource type="Script" path="res://GameManager.gd" id="1_3jc27"]
 [ext_resource type="PackedScene" uid="uid://dwxdq15unsvsn" path="res://player/player.tscn" id="1_dhger"]
@@ -11,19 +11,11 @@
 [ext_resource type="PackedScene" uid="uid://1ke877ir43uu" path="res://collide/collide.tscn" id="8_6jtd4"]
 [ext_resource type="PackedScene" uid="uid://1vrd7xu1pjyx" path="res://enemies/red_mob/red_mob.tscn" id="9_yw4v6"]
 [ext_resource type="FontFile" uid="uid://bcruet1yxf71e" path="res://PixelOperator8.ttf" id="11_75vyb"]
-[ext_resource type="Texture2D" uid="uid://de2wjclxiq8pp" path="res://ui/Yarn_UI.png" id="11_ndaep"]
 [ext_resource type="PackedScene" uid="uid://cupf3m6hfmx0b" path="res://sack/sack.tscn" id="12_boxpd"]
 [ext_resource type="PackedScene" uid="uid://bawrvanbmwsie" path="res://damage_zone_only_player/damage_zone_only_player.tscn" id="13_2jri5"]
 [ext_resource type="PackedScene" uid="uid://p7b3o723ngib" path="res://villager.tscn" id="15_dm22j"]
 [ext_resource type="PackedScene" uid="uid://bbj81v67507tf" path="res://sacksack/sacksack.tscn" id="15_va3rc"]
-[ext_resource type="Texture2D" uid="uid://c3a8hm0ttv16j" path="res://ui/healt_hud.png" id="16_1erua"]
 [ext_resource type="Texture2D" uid="uid://cl8ldtn7o3g65" path="res://ui/pot_96x96.png" id="16_ojdc0"]
-[ext_resource type="Texture2D" uid="uid://b10rtm5mjaim1" path="res://ui/healt.png" id="17_2fi5k"]
-[ext_resource type="Script" path="res://Boss.gd" id="20_3n8wa"]
-[ext_resource type="Texture2D" uid="uid://b62up3nf0s8jj" path="res://boss_cat/Bosscat_Attack1_128x128_f9_HIT6-7.png" id="21_1shqb"]
-[ext_resource type="Texture2D" uid="uid://dxf40vy225k5x" path="res://boss_cat/Bosscat_idle_128x128_f5.png" id="22_cma8v"]
-[ext_resource type="Texture2D" uid="uid://dvivb2km7v5et" path="res://boss_cat/Bosscat_walk_128x128_f4.png" id="23_jeprw"]
-[ext_resource type="Texture2D" uid="uid://5cagjs1g4ivf" path="res://boss_cat/Bosscat_CrabWalk_128x128_f8.png" id="24_oumug"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mvpq5"]
 texture = ExtResource("2_vm7w2")
@@ -518,8 +510,6 @@ sources/2 = SubResource("TileSetAtlasSource_2jfuh")
 sources/3 = SubResource("TileSetAtlasSource_jygq3")
 sources/4 = SubResource("TileSetAtlasSource_ck1cp")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eifwt"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fadep"]
 size = Vector2(24.5, 29)
 
@@ -553,214 +543,7 @@ bg_color = Color(0, 0, 0, 0.513726)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uxd5x"]
 bg_color = Color(0, 0, 0, 0.501961)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vvwbf"]
-atlas = ExtResource("21_1shqb")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3jcsj"]
-atlas = ExtResource("21_1shqb")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lwq4t"]
-atlas = ExtResource("21_1shqb")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_s73hx"]
-atlas = ExtResource("21_1shqb")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_w72j8"]
-atlas = ExtResource("21_1shqb")
-region = Rect2(512, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_grheb"]
-atlas = ExtResource("21_1shqb")
-region = Rect2(640, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jrxud"]
-atlas = ExtResource("21_1shqb")
-region = Rect2(768, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7lugi"]
-atlas = ExtResource("21_1shqb")
-region = Rect2(896, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_76gj7"]
-atlas = ExtResource("21_1shqb")
-region = Rect2(1024, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_leh0r"]
-atlas = ExtResource("22_cma8v")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wl2xr"]
-atlas = ExtResource("22_cma8v")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1supj"]
-atlas = ExtResource("22_cma8v")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qne8b"]
-atlas = ExtResource("22_cma8v")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tqdm5"]
-atlas = ExtResource("22_cma8v")
-region = Rect2(512, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v84ep"]
-atlas = ExtResource("23_jeprw")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_so0uq"]
-atlas = ExtResource("23_jeprw")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_vtalk"]
-atlas = ExtResource("23_jeprw")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ppae6"]
-atlas = ExtResource("23_jeprw")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4wyoe"]
-atlas = ExtResource("24_oumug")
-region = Rect2(0, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ueuen"]
-atlas = ExtResource("24_oumug")
-region = Rect2(128, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_day81"]
-atlas = ExtResource("24_oumug")
-region = Rect2(256, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fceg1"]
-atlas = ExtResource("24_oumug")
-region = Rect2(384, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4rhj8"]
-atlas = ExtResource("24_oumug")
-region = Rect2(512, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8484l"]
-atlas = ExtResource("24_oumug")
-region = Rect2(640, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yyjh0"]
-atlas = ExtResource("24_oumug")
-region = Rect2(768, 0, 128, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4shtx"]
-atlas = ExtResource("24_oumug")
-region = Rect2(896, 0, 128, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_yw26y"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vvwbf")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3jcsj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lwq4t")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_s73hx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w72j8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_grheb")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jrxud")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7lugi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_76gj7")
-}],
-"loop": true,
-"name": &"attack_down",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_leh0r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wl2xr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1supj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_qne8b")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_tqdm5")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v84ep")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_so0uq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vtalk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ppae6")
-}],
-"loop": true,
-"name": &"walk_down",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4wyoe")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ueuen")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_day81")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fceg1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4rhj8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8484l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yyjh0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4shtx")
-}],
-"loop": true,
-"name": &"walk_right",
-"speed": 5.0
-}]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_glygr"]
-
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h7axe"]
+[sub_resource type="ImageTexture" id="ImageTexture_nm73m"]
 
 [node name="Game" type="Node2D"]
 
@@ -788,65 +571,13 @@ z_index = 5
 position = Vector2(161, 232)
 collision_layer = 3
 collision_mask = 3
+WALK_SPEED = null
+ROLL_SPEED = null
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(0, -16)
 process_callback = 0
 limit_bottom = 330
-
-[node name="UI" type="CanvasLayer" parent="."]
-
-[node name="Control" type="Control" parent="UI"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="HealthBar" type="TextureProgressBar" parent="UI/Control"]
-layout_mode = 0
-offset_top = 144.0
-offset_right = 66.0
-offset_bottom = 210.0
-scale = Vector2(0.559999, 0.559998)
-fill_mode = 3
-texture_under = ExtResource("16_1erua")
-texture_progress = ExtResource("17_2fi5k")
-
-[node name="TextureRect" type="TextureRect" parent="UI/Control"]
-layout_mode = 0
-offset_left = 40.0
-offset_top = 144.0
-offset_right = 80.0
-offset_bottom = 184.0
-scale = Vector2(0.4, 0.400001)
-texture = ExtResource("16_ojdc0")
-
-[node name="TextureRect2" type="TextureRect" parent="UI/Control"]
-layout_mode = 0
-offset_left = 288.0
-offset_top = -8.0
-offset_right = 320.0
-offset_bottom = 24.0
-texture = ExtResource("11_ndaep")
-
-[node name="Label" type="Label" parent="UI/Control"]
-layout_mode = 0
-offset_left = 72.0
-offset_top = 168.0
-offset_right = 104.0
-offset_bottom = 176.0
-theme_override_fonts/font = ExtResource("11_75vyb")
-theme_override_font_sizes/font_size = 8
-theme_override_styles/normal = SubResource("StyleBoxEmpty_eifwt")
-
-[node name="Label2" type="Label" parent="UI/Control"]
-layout_mode = 0
-offset_left = 272.0
-offset_top = 8.0
-offset_right = 312.0
-offset_bottom = 31.0
-theme_override_fonts/font = ExtResource("11_75vyb")
-theme_override_font_sizes/font_size = 8
 
 [node name="Colliders" type="Node" parent="."]
 
@@ -879,15 +610,15 @@ position = Vector2(-171, 134)
 scale = Vector2(7.1782, 0.769822)
 
 [node name="Collide94" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(-227, -51)
+position = Vector2(-230, -51)
 scale = Vector2(4.5782, 0.769822)
 
 [node name="Collide102" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(-177, -31)
+position = Vector2(-179, -30)
 scale = Vector2(0.658202, 1.32982)
 
 [node name="Collide103" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(-164, -16)
+position = Vector2(-166, -15)
 scale = Vector2(1.6582, 0.409824)
 
 [node name="Collide104" parent="Colliders" instance=ExtResource("8_6jtd4")]
@@ -896,22 +627,22 @@ scale = Vector2(0.818204, 1.08983)
 
 [node name="Collide101" parent="Colliders" instance=ExtResource("8_6jtd4")]
 position = Vector2(-283, 20)
-scale = Vector2(1.0182, 6.64982)
+scale = Vector2(0.818199, 6.64982)
 
 [node name="Collide95" parent="Colliders" instance=ExtResource("8_6jtd4")]
 position = Vector2(-261, 84)
 scale = Vector2(1.61819, 0.769822)
 
 [node name="Collide96" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(-238, 71)
+position = Vector2(-238, 70)
 scale = Vector2(0.622882, 0.769822)
 
 [node name="Collide97" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(-235, 99)
+position = Vector2(-233, 95)
 scale = Vector2(0.622882, 2.92982)
 
 [node name="Collide98" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(-158, 80)
+position = Vector2(-162, 83)
 scale = Vector2(0.622882, 1.76982)
 
 [node name="Collide99" parent="Colliders" instance=ExtResource("8_6jtd4")]
@@ -948,7 +679,7 @@ position = Vector2(156, -53)
 scale = Vector2(0.667607, 1.04176)
 
 [node name="Collide34" parent="Colliders" instance=ExtResource("8_6jtd4")]
-position = Vector2(389, -230)
+position = Vector2(210, -208)
 scale = Vector2(8.22761, 1.32176)
 
 [node name="Collide43" parent="Colliders" instance=ExtResource("8_6jtd4")]
@@ -1607,26 +1338,41 @@ flip_h = true
 [node name="Sacksack" parent="." instance=ExtResource("15_va3rc")]
 position = Vector2(241, -513)
 
-[node name="Boss" type="CharacterBody2D" parent="."]
-position = Vector2(126, -462)
-script = ExtResource("20_3n8wa")
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Boss"]
-position = Vector2(-4, -21)
-sprite_frames = SubResource("SpriteFrames_yw26y")
-animation = &"walk_down"
+[node name="HealthBar" type="TextureProgressBar" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+fill_mode = 2
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Boss"]
-position = Vector2(-3, -13)
-scale = Vector2(2.62458, 2.66874)
-shape = SubResource("CapsuleShape2D_glygr")
+[node name="PotionsContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Area2D" type="Area2D" parent="Boss"]
+[node name="TextureRect" type="TextureRect" parent="Control/PotionsContainer"]
+layout_mode = 2
+texture = ExtResource("16_ojdc0")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Boss/Area2D"]
-position = Vector2(-4, 23)
-scale = Vector2(3.92, 0.8)
-shape = SubResource("CapsuleShape2D_h7axe")
+[node name="Label" type="Label" parent="Control/PotionsContainer"]
+layout_mode = 2
+
+[node name="YarnsContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="Control/YarnsContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/YarnsContainer"]
+layout_mode = 2
+texture = SubResource("ImageTexture_nm73m")
 
 [connection signal="body_entered" from="RedMobs/RedMob6/DamageZoneOnlyPlayer" to="RedMobs/RedMob6/DamageZoneOnlyPlayer" method="_on_body_entered"]
 [connection signal="body_entered" from="RedMobs/RedMob7/DamageZoneOnlyPlayer" to="RedMobs/RedMob7/DamageZoneOnlyPlayer" method="_on_body_entered"]
@@ -1651,7 +1397,6 @@ shape = SubResource("CapsuleShape2D_h7axe")
 [connection signal="body_exited" from="Npcs/Villager5/Area2D" to="Npcs/Villager5" method="_on_area_2d_body_exited"]
 [connection signal="body_entered" from="Npcs/Villager6/Area2D" to="Npcs/Villager6" method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Npcs/Villager6/Area2D" to="Npcs/Villager6" method="_on_area_2d_body_exited"]
-[connection signal="body_entered" from="Boss/Area2D" to="Player" method="_on_area_2d_body_entered"]
 
 [editable path="Npcs/Villager"]
 [editable path="Npcs/Villager2"]
