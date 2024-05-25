@@ -1,28 +1,46 @@
 extends CharacterBody2D
+const speed = 30
+var time_accumulator = 0.0
+var update_interval = 0.5
+var directionX = 0
+var directionY = 0
+@onready var animated_sprite = $AnimatedSprite2D
 
-
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
-
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
-
+var maxHealth = 50
+var currentHealth = 50
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+#asd
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
 func _physics_process(delta):
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
-
-	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
-
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
+	if directionX:
+		velocity.x = directionX * speed
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+		velocity.x = move_toward(velocity.x, 0, speed)
+	if directionY:
+		velocity.y = directionY * speed
+	else:
+		velocity.y = move_toward(velocity.y, 0, speed)
 	move_and_slide()
+
+	time_accumulator += delta
+	if time_accumulator >= update_interval:
+		time_accumulator -= update_interval
+		perform_update(delta)
+
+func perform_update(delta):
+	directionX = randi_range(-1,1)
+	directionY = randi_range(-1,1)
+func damage(num):
+	currentHealth -= clamp(num , 0 ,maxHealth)
+	animated_sprite.modulate = Color(1, 0, 0) # Beyaza dön
+	await get_tree().create_timer(0.2).timeout
+	animated_sprite.modulate = Color(1, 1, 1) # Eski haline dön
+	if currentHealth <= 0:
+		die()
+func die():
+	set_physics_process(false)
+	queue_free()

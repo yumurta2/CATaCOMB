@@ -23,7 +23,8 @@ var dodging = false
 var can_dodge = true
 var directionX
 var directionY
-var maxHealth = 100
+var maxHealthVar = 0
+var maxHealth = 300
 var currentHealth = 100
 var potions = 0
 func _ready():
@@ -40,7 +41,7 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("drink_pot"):
 		if potions > 0:
 			game_manager.decres_potions()
-			currentHealth = clamp(currentHealth + 10 , 0 ,maxHealth)
+			currentHealth = clamp(currentHealth + 10 , 0 ,maxHealth + maxHealthVar)
 	
 	if not dodging:
 		directionX = Input.get_axis("move_left", "move_right")

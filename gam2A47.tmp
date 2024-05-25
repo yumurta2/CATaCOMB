@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://qrdhp27rwp2f"]
+[gd_scene load_steps=43 format=3 uid="uid://qrdhp27rwp2f"]
 
 [ext_resource type="Script" path="res://GameManager.gd" id="1_3jc27"]
 [ext_resource type="PackedScene" uid="uid://dwxdq15unsvsn" path="res://player/player.tscn" id="1_dhger"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cipme764kutej" path="res://tileset/dungeon/dungeon_tiles.png" id="6_hfups"]
 [ext_resource type="PackedScene" uid="uid://c6iu4lywivrgq" path="res://npcs/shaman/shaman.tscn" id="7_58olk"]
 [ext_resource type="PackedScene" uid="uid://1ke877ir43uu" path="res://collide/collide.tscn" id="8_6jtd4"]
+[ext_resource type="Script" path="res://ColorRect.gd" id="9_5ja7v"]
 [ext_resource type="PackedScene" uid="uid://1vrd7xu1pjyx" path="res://enemies/red_mob/red_mob.tscn" id="9_yw4v6"]
 [ext_resource type="FontFile" uid="uid://bcruet1yxf71e" path="res://PixelOperator8.ttf" id="11_75vyb"]
 [ext_resource type="Texture2D" uid="uid://bomy8d7h3o72a" path="res://ui/Yarn_UI.png" id="11_ndaep"]
@@ -595,6 +596,7 @@ offset_top = -106.0
 offset_right = 160.0
 offset_bottom = 74.0
 color = Color(1, 1, 1, 0)
+script = ExtResource("9_5ja7v")
 
 [node name="UI" type="CanvasLayer" parent="."]
 

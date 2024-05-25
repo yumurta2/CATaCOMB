@@ -1,5 +1,6 @@
 extends Node
 const YARN = preload("res://collectible/yarn/yarn.tscn")
+const BIG_RED_MOB = preload("res://enemies/big_red_mob/big_red_mob.tscn")
 var tangled_yarns = 32
 var process : Dictionary
 var potions = 0
@@ -31,7 +32,9 @@ func new_loot(posX, posY):
 		add_child(yarn_instance)
 		yarn_instance.position = Vector2(posX, posY)
 	elif rasgele == 2:
-		pass
+		var brm_instance = BIG_RED_MOB.instantiate() 
+		add_child(brm_instance)
+		brm_instance.position = Vector2(posX, posY)
 	elif rasgele ==3:
 		pass
 func sell_tangled_yarns():
@@ -47,3 +50,7 @@ func custom_mod(a: int):
 		a -= b
 		count += 1
 	return {"remainder": a, "divisions": count}
+
+
+func _on_timer_timeout():
+	pass # Replace with function body.
